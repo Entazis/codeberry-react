@@ -8,8 +8,12 @@ import Navbar
 const layout = (props) => {
     return (
         <div className={classes.Layout}>
-            <Navbar />
-            {props.children}
+            <header>
+                <Navbar />
+            </header>
+            <main>
+                {props.children}
+            </main>
         </div>
     );
 };
