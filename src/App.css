@@ -1,12 +1,22 @@
+a, a:hover, a:focus {
+    cursor: pointer;
+    color: #c74f78;
+    text-decoration: none;
+    display: inline-block;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Noto Serif", "Times New Roman", Times, serif;
+    font-weight: 700;
+    line-height: 1.2;
+    color: inherit;
+}
+
 .App {
     text-align: center;
     font-family: "Noto Sans", Helvetica, Arial, sans-serif;
     padding-top: 70px;
-    font-size: 17px;
+    font-size: 19px;
     line-height: 1.55;
-}
-
-a {
-    cursor: pointer;
-    color: #c74f78;
+    box-sizing: border-box;
 }
