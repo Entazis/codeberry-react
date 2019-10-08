@@ -6,8 +6,8 @@ import classes from './Header.module.css';
 
 const header = () => {
     return (
-        <header>
-            <nav className={classes.NavbarFixedTop}>
+        <header  className={classes.HeaderFixedTop}>
+            <nav>
                 <div className={classes.NavbarContainerFluid}>
                     <div className={classes.NavbarHeader}>
                         <div className={classes.NavbarContainerFluid}>

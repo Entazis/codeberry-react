@@ -87,12 +87,11 @@ const auth = () => {
                                 </FormGroup>
 
                                 <Button variant={"primary"} className={[classes.btnBlock, classes.btnPrimary].join(' ')}>Log in <FontAwesomeIcon icon={faSignInAlt} /></Button>
-
                             </form>
-                            <p className={[classes.TextMuted, classes.TextRight].join(' ')}>
+                            <p className="text-right text-muted">
                                 <small><a href="/auth/password-reset">Forgot your password?</a></small>
                             </p>
-                            <p className={classes.TextMuted}>
+                            <p className="text-muted">
                                 <small>Don't have an account? <a href="/auth/signup"> Sign up now</a>!</small>
                             </p>
                         </Col>
