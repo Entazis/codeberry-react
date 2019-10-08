@@ -16,12 +16,12 @@ const footer = () => {
             <ul className={classes.LanguageSelector}>
                 <li className={classes.DropUp}>
                     <a className="a-navbar dropdown-toggle"
-                       href="#"
+                       href="/"
                        data-toggle="dropdown">
                         <FontAwesomeIcon icon={faFlagUsa} /><span className="caret" /></a>
                     <ul className="dropdown-menu">
                         <li>
-                            <a href="#"><FontAwesomeIcon icon={faFlagUsa} /> English
+                            <a href="/"><FontAwesomeIcon icon={faFlagUsa} /> English
                                 <form
                                     id="setLang-en-US"
                                     action="/i18n/setlocale"

@@ -1,0 +1,94 @@
+.LinerContainer {
+    overflow: hidden;
+    text-align: center;
+}
+
+.Liner {
+    display: inline-block;
+    padding: 20px 20px;
+    position: relative;
+}
+
+.Liner:before {
+    background: #c74f78;
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    width: 400%;
+    right: 100%;
+}
+
+.Liner:after {
+    left: 100%;
+    background: #c74f78;
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    width: 400%;
+}
+
+.btnFacebook {
+    background-color: #3b5998;
+    color: #fff;
+    background-image: linear-gradient(to bottom, #4264aa 0%, #344e86 100%);
+    background-repeat: repeat-x;
+    border-color: #2d4373;
+    border-bottom-color: #1e2e4f;
+    text-shadow: none;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.btnFacebook::selection {
+    background: #47474d;
+    color: #fff;
+    text-shadow: none;
+}
+
+.btnGoogle {
+    background-color: #dd4b39;
+    color: #fff;
+    background-image: linear-gradient(to bottom, #e15f4f 0%, #d73925 100%);
+    background-repeat: repeat-x;
+    border-color: #c23321;
+    border-bottom-color: #96271a;
+    text-shadow: none;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.btnGoogle::selection {
+    background: #47474d;
+    color: #fff;
+    text-shadow: none;
+}
+
+.btnSocial {
+    position: relative;
+    padding-left: 52px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btnBlock {
+    display: block;
+    width: 100%;
+}
+
+.btn {
+    margin-bottom: 0;
+    font-weight: normal;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    border-radius: 4px;
+    user-select: none;
+    font-size: 19px;
+    line-height: 1.6;
+}
