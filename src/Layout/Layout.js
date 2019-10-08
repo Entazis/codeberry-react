@@ -1,19 +1,17 @@
-import React
-    from 'react';
+import React from 'react';
 import classes from './Layout.module.css';
-import Navbar
-    from '../Navbar/Navbar';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 
 const layout = (props) => {
     return (
         <div className={classes.Layout}>
-            <header>
-                <Navbar />
-            </header>
+            <Header />
             <main>
                 {props.children}
             </main>
+            <Footer />
         </div>
     );
 };
