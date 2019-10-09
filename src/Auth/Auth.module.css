@@ -24,3 +24,36 @@
 .TextBerry {
     color: #c74f78;
 }
+
+.LinerContainer {
+    overflow: hidden;
+    text-align: center;
+}
+
+.Liner {
+    display: inline-block;
+    padding: 20px 20px;
+    position: relative;
+}
+
+.Liner:before {
+    background: #c74f78;
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    width: 400%;
+    right: 100%;
+}
+
+.Liner:after {
+    left: 100%;
+    background: #c74f78;
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    width: 400%;
+}

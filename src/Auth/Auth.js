@@ -1,14 +1,18 @@
 import React
     from 'react';
-import classes from './Auth.module.css';
+import {Redirect} from 'react-router';
 import { Container, Col, Row, Alert } from 'react-bootstrap';
 
+import classes from './Auth.module.css';
 import SocialLogin from './SocialLogin/SocialLogin';
 import LoginForm from './LoginForm/LoginForm';
 
-const auth = () => {
+
+const auth = (props) => {
+    const redirect = (props.user.isSignedIn) ? <Redirect to="/lessons"/> : null;
     return (
         <Container fluid>
+            {redirect}
             <Row>
                 <Col md={{span: 6, offset: 3}}>
                     <Row>
@@ -25,8 +29,15 @@ const auth = () => {
                     </Row>
                     <Row>
                         <Col md={{span: 8, offset: 2}}>
-                            <SocialLogin />
-                            <LoginForm />
+                            <div className={classes.LinerContainer}>
+                                <h5 className={classes.Liner}>Use one of your existing accounts</h5>
+                            </div>
+                            <SocialLogin signedIn={props.signedIn} signedOut={props.signedOut}/>
+
+                            <div className={classes.LinerContainer}>
+                                <h5 className={classes.Liner}> Or log in with your email address </h5>
+                            </div>
+                            <LoginForm signedIn={props.signedIn} signedOut={props.signedOut}/>
                         </Col>
                     </Row>
                 </Col>

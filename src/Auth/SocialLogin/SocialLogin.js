@@ -15,9 +15,6 @@ import {
 const socialLogin = () => {
     return (
         <React.Fragment>
-            <div className={classes.LinerContainer}>
-                <h5 className={classes.Liner}>Use one of your existing accounts</h5>
-            </div>
             <Row id={"oauth-box"}>
                 <Col sm={12}>
                     <a href="/auth/facebook"
@@ -30,9 +27,6 @@ const socialLogin = () => {
                     </a>
                 </Col>
             </Row>
-            <div className={classes.LinerContainer}>
-                <h5 className={classes.Liner}> Or log in with your email address </h5>
-            </div>
         </React.Fragment>
     );
 };
