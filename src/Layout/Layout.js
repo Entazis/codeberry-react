@@ -1,10 +1,13 @@
 import React from 'react';
+
 import classes from './Layout.module.css';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
+import { useWindowSize } from '../hooks/useWindowSize';
 
+const Layout = (props) => {
+    const windowSize = useWindowSize();
 
-const layout = (props) => {
     return (
         <div className={classes.Layout}>
             <Header />
@@ -16,4 +19,4 @@ const layout = (props) => {
     );
 };
 
-export default layout;
+export default Layout;
