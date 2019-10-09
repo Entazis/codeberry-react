@@ -35,3 +35,32 @@
     vertical-align: middle;
     border: 0;
 }
+
+.NavbarCollapse {
+    width: auto;
+    border-top: 0;
+    box-shadow: none;
+    display: block !important;
+    height: auto !important;
+    padding-bottom: 0;
+    overflow: visible !important;
+    padding-left: 0;
+    padding-right: 0;
+    max-height: 340px;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.NavbarLeft {
+    padding-left: 0;
+    list-style: none;
+    float: left;
+    margin: 0;
+}
+
+.NavbarRight {
+    float: right !important;
+    margin: 0 -15px 0 0;
+    padding-left: 0;
+    list-style: none;
+}

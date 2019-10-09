@@ -10,7 +10,7 @@ import { useWindowSize } from './hooks/useWindowSize';
 
 const initialUserState = {
     userId: null,
-    isSignedIn: false
+    isSignedIn: true
 };
 
 const App = () => {
