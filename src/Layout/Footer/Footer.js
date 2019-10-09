@@ -5,9 +5,14 @@ import classes from './Footer.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFlagUsa } from "@fortawesome/free-solid-svg-icons";
 
-const footer = () => {
+const footer = (props) => {
+    const classList = [classes.Footer];
+    if (!props.isDesktop) {
+        classList.push(classes.FooterUp);
+    }
+
     return (
-        <footer className={classes.Footer}>
+        <footer className={classList.join(' ')}>
             <Link to="/"><img
                 alt="Logo"
                 className={[classes.LogoImg, classes.ImgResponsive].join(' ')}

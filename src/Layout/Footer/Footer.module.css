@@ -9,6 +9,10 @@
     z-index: 998;
 }
 
+.FooterUp {
+    margin-bottom: 80px;
+}
+
 .LanguageSelector {
     display: inline-block;
     list-style-type: none;

@@ -6,14 +6,18 @@ import classes from './App.module.css';
 import Layout from './Layout/Layout';
 import Auth from './Auth/Auth';
 import Lessons from './Lessons/Lessons';
+import { useWindowSize } from './hooks/useWindowSize';
 
 function App() {
+    const windowSize = useWindowSize();
+    const isDesktop = windowSize.width >= 1360;
+
     return (
         <div className={classes.App}>
-            <Layout>
+            <Layout isDesktop={isDesktop}>
                 <Switch>
                     <Route path='/auth' component={Auth} />
-                    <Route path='/lessons' component={Lessons} />
+                    <Route path='/lessons' component={() => <Lessons isDesktop={isDesktop}/>} />
                     <Route path="/" exact component={""}/>
                     <Redirect to="/auth"/>
                 </Switch>

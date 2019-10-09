@@ -1,10 +1,12 @@
 import React
     from 'react';
+import classes from './Navigation.module.css';
 
 const navigation = () => {
     return (
         <div>
-            navigation-controller
+            <div className={classes.Header}>navigation-header</div>
+            <div className={classes.Body}>navigation-body</div>
         </div>
     );
 };

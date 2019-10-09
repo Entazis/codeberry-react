@@ -1,0 +1,36 @@
+.Header {
+    border-radius: 4px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    height: 165px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #e1e8ed;
+    display: flex;
+    cursor: pointer;
+    position: relative;
+}
+
+.Body {
+    padding: 20px;
+    margin-bottom: 20px;
+    height: 90%;
+    background-color: white;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.HeaderMobile {
+    border-radius: 4px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    height: 165px;
+    padding: 10px;
+}
+
+.BodyMobile {
+    padding: 0;
+    margin-bottom: 0;
+    border-right: 1px solid #e1e8ed;
+    border-left: 1px solid #e1e8ed;
+}
