@@ -15,7 +15,7 @@ import {
 import classes
     from './LoginForm.module.css';
 
-const loginForm = () => {
+const loginForm = (props) => {
     return (
         <React.Fragment>
             <form
@@ -43,7 +43,7 @@ const loginForm = () => {
                     </InputGroup>
                 </FormGroup>
 
-                <Button variant={"primary"} className={[classes.btnBlock, classes.btnPrimary].join(' ')}>Log in <FontAwesomeIcon icon={faSignInAlt} /></Button>
+                <Button onClick={props.signedIn} variant={"primary"} className={[classes.btnBlock, classes.btnPrimary].join(' ')}>Log in <FontAwesomeIcon icon={faSignInAlt} /></Button>
             </form>
             <p className="text-right text-muted">
                 <small><a href="/auth/password-reset">Forgot your password?</a></small>

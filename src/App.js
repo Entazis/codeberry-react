@@ -19,11 +19,13 @@ const App = () => {
     const windowSize = useWindowSize();
     const isDesktop = windowSize.width >= 1360;
 
-    const onUserSignedIn = () => {
+    const onUserSignedIn = (e) => {
+        e.preventDefault();
         setUser({userId: 'userid-1', isSignedIn: true});
     };
 
-    const onUserSignedOut = () => {
+    const onUserSignedOut = (e) => {
+        e.preventDefault();
         setUser({userId: null, isSignedIn: false});
     };
 
