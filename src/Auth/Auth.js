@@ -1,12 +1,7 @@
 import React
     from 'react';
 import classes from './Auth.module.css';
-import {
-    Container,
-    Col,
-    Row,
-    Alert
-} from 'react-bootstrap';
+import { Container, Col, Row, Alert } from 'react-bootstrap';
 
 import SocialLogin from './SocialLogin/SocialLogin';
 import LoginForm from './LoginForm/LoginForm';
