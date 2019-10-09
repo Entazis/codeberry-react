@@ -2,14 +2,14 @@ import React from 'react';
 import { Switch, Route, Redirect } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import './App.css';
+import classes from './App.module.css';
 import Layout from './Layout/Layout';
 import Auth from './Auth/Auth';
 import Lessons from './Lessons/Lessons';
 
 function App() {
     return (
-        <div className="App">
+        <div className={classes.App}>
             <Layout>
                 <Switch>
                     <Route path='/auth' component={Auth} />
