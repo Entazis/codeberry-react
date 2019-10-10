@@ -39,10 +39,14 @@ const header = (props) => {
                         </Nav.Link>
                         <Nav.Link>
                             <NavDropdown
+                                alignRight
                                 title={props.user.userInitials}
                                 className={classes.UserMenu}
                                 id="user-nav-dropdown">
-                                <NavDropdown.Item href="/user/search">Students</NavDropdown.Item>
+                                <NavDropdown.Item href="/user/search">Onboarding panel</NavDropdown.Item>
+                                <NavDropdown.Item href="/user/search">Divider</NavDropdown.Item>
+                                <NavDropdown.Item href="/user/search">Profile</NavDropdown.Item>
+                                <NavDropdown.Item href="/user/search">Logout</NavDropdown.Item>
                             </NavDropdown>
                         </Nav.Link>
                     </Nav>
