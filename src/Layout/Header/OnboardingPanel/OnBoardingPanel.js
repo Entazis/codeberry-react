@@ -16,8 +16,12 @@ const onBoardingPanel = () => {
             <p><strong>Level up:</strong></p>
             <div className={classes.ProgressBar}>
                 <div
-                    className={classes.ProgressLevel}>
-
+                    className={classes.ProgressLevel}
+                    role={'progressbar'}
+                    aria-valuenow={67}
+                    aria-valuemin={0}
+                    aria-valuemax={100}
+                >
                 </div>
             </div>
 
