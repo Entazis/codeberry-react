@@ -2,9 +2,9 @@
     position: relative;
     background-color: #f0f0f2;
     border-radius: 4px;
-    margin: 5px 10px;
-    padding: 12px;
-    min-width: 370px;
+    margin: 5px 8px;
+    padding: 7px;
+    min-width: 400px;
 }
 
 .AlertBadge {
