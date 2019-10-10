@@ -11,7 +11,9 @@ import { useWindowSize } from './hooks/useWindowSize';
 
 const initialUserState = {
     userId: null,
-    isSignedIn: true
+    isSignedIn: true,
+    userName: 'Laci',
+    userInitials: 'BL'
 };
 
 const App = () => {
