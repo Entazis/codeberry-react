@@ -39,8 +39,7 @@ const header = (props) => {
                                 className={classes.GiftImg}
                                 src="/images/referral-icon.png" />
                         </Nav.Link>
-                        <Nav.Link>
-                            <NavDropdown
+                        <NavDropdown
                                 alignRight
                                 title={props.user.userInitials}
                                 className={classes.UserMenu}
@@ -49,8 +48,7 @@ const header = (props) => {
                                 <NavDropdown.Divider />
                                 <NavDropdown.Item href="/user/profile"><FontAwesomeIcon icon={faUser} /> Profile</NavDropdown.Item>
                                 <NavDropdown.Item href="/auth/logout"><FontAwesomeIcon icon={faSignOutAlt} /> Logout</NavDropdown.Item>
-                            </NavDropdown>
-                        </Nav.Link>
+                        </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

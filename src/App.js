@@ -22,6 +22,8 @@ const App = () => {
     const windowSize = useWindowSize();
     const isDesktop = windowSize.width >= 1360;
 
+    //console.log(window.location);
+
     const onUserSignedIn = (e) => {
         e.preventDefault();
         setUser({userId: 'userid-1', isSignedIn: true});
