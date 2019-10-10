@@ -7,7 +7,7 @@ import { faFlagUsa } from "@fortawesome/free-solid-svg-icons";
 
 const footer = (props) => {
     const classList = [classes.Footer];
-    if (!props.isDesktop) {
+    if (props.isLessonsOnMobile) {
         classList.push(classes.FooterUp);
     }
 

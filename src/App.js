@@ -20,9 +20,7 @@ const App = () => {
     const [user, setUser] = useState(initialUserState);
 
     const windowSize = useWindowSize();
-    const isDesktop = windowSize.width >= 1360;
-
-    //console.log(window.location);
+    const isLessonsOnMobile = windowSize.width < 1360 && window.location.pathname.startsWith('/lessons');
 
     const onUserSignedIn = (e) => {
         e.preventDefault();
@@ -36,10 +34,10 @@ const App = () => {
 
     return (
         <div className={classes.App}>
-            <Layout isDesktop={isDesktop} user={user}>
+            <Layout isLessonsOnMobile={isLessonsOnMobile} user={user}>
                 <Switch>
                     <Route path='/auth' component={() => <Auth user={user} signedIn={onUserSignedIn} signedOut={onUserSignedOut}/>} />
-                    <Route path='/lessons' component={() => <Lessons user={user} isDesktop={isDesktop}/>} />
+                    <Route path='/lessons' component={() => <Lessons user={user} isLessonsOnMobile={isLessonsOnMobile}/>} />
                     <Route path="/" exact component={""}/>
                     <Redirect to="/auth"/>
                 </Switch>

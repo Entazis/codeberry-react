@@ -11,7 +11,7 @@ const Layout = (props) => {
             <main className={classes.Main}>
                 {props.children}
             </main>
-            <Footer isDesktop={props.isDesktop}/>
+            <Footer isLessonsOnMobile={props.isLessonsOnMobile}/>
         </div>
     );
 };

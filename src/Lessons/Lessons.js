@@ -9,7 +9,7 @@ const lessons = (props) => {
     const redirect = (!props.user.isSignedIn) ? <Redirect to="/auth"/> : null;
 
     const controllerClasses = [classes.Controller];
-    if (!props.isDesktop) {
+    if (props.isLessonsOnMobile) {
         controllerClasses.push(classes.BottomFix);
     }
 
