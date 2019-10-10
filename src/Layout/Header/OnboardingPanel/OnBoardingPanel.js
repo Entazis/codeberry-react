@@ -8,10 +8,10 @@ const onBoardingPanel = () => {
     return (
         <div className={classes.OnBoardingPanel}>
             <div className={classes.AlertBadge}>
-                <Badge pill variant={'danger'}>1</Badge>
+                <Badge pill variant="danger">1</Badge>
             </div>
             <div className={classes.Points}>
-                <Badge variant={'success'}>100 points</Badge>
+                <Badge variant="success">100 points</Badge>
             </div>
             <p><strong>Level up:</strong></p>
             <div className={classes.ProgressBar}>

@@ -9,7 +9,7 @@ import LoginForm from './LoginForm/LoginForm';
 
 
 const auth = (props) => {
-    const redirect = (props.user.isSignedIn) ? <Redirect to={'/lessons'}/> : null;
+    const redirect = (props.user.isSignedIn) ? <Redirect to="/lessons"/> : null;
     return (
         <Container fluid>
             {redirect}
@@ -18,12 +18,12 @@ const auth = (props) => {
                     <Row>
                         <Col>
                             <div>
-                                <img className={[classes.LogoMain, classes.ImgResponsive].join(' ')} src={'/images/logo/logo-text-horizontal@0.5.png'} alt={'CodeBerry-logo'} />
+                                <img className={[classes.LogoMain, classes.ImgResponsive].join(' ')} src="/images/logo/logo-text-horizontal@0.5.png" alt="CodeBerry-logo" />
                                 <p className={classes.Lead}><span className={classes.TextBerry}>Log in</span> to the programming school</p>
                             </div>
                             <div>
-                                <Alert variant={'danger'} dismissible>You need to log in to view this page</Alert>
-                                <Alert variant={'info'} dismissible>If you already have an account, use the same login method to access your previously submitted assignments</Alert>
+                                <Alert variant="danger" dismissible>You need to log in to view this page</Alert>
+                                <Alert variant="info" dismissible>If you already have an account, use the same login method to access your previously submitted assignments</Alert>
                             </div>
                         </Col>
                     </Row>

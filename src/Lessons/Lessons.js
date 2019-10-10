@@ -6,7 +6,7 @@ import Navigation from './Navigation/Navigation';
 import Content from './Content/Content';
 
 const lessons = (props) => {
-    const redirect = (!props.user.isSignedIn) ? <Redirect to='/auth'/> : null;
+    const redirect = (!props.user.isSignedIn) ? <Redirect to="/auth"/> : null;
 
     const controllerClasses = [classes.Controller];
     if (!props.isDesktop) {
