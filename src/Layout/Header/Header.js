@@ -2,8 +2,11 @@ import React
     from 'react';
 import { Navbar, Nav, NavDropdown
 } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 import classes from './Header.module.css';
+import OnBoardingPanel from './OnboardingPanel/OnBoardingPanel';
 
 const header = (props) => {
     return (
@@ -43,10 +46,10 @@ const header = (props) => {
                                 title={props.user.userInitials}
                                 className={classes.UserMenu}
                                 id="user-nav-dropdown">
-                                <NavDropdown.Item href="/user/search">Onboarding panel</NavDropdown.Item>
-                                <NavDropdown.Item href="/user/search">Divider</NavDropdown.Item>
-                                <NavDropdown.Item href="/user/search">Profile</NavDropdown.Item>
-                                <NavDropdown.Item href="/user/search">Logout</NavDropdown.Item>
+                                <NavDropdown.Item href="/user/search"><OnBoardingPanel /></NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item href="/user/profile"><FontAwesomeIcon icon={faUser} /> Profile</NavDropdown.Item>
+                                <NavDropdown.Item href="/auth/logout"><FontAwesomeIcon icon={faSignOutAlt} /> Logout</NavDropdown.Item>
                             </NavDropdown>
                         </Nav.Link>
                     </Nav>
