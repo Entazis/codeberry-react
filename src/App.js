@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Switch, Route, Redirect } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import './customStyle.css';
 import classes from './App.module.css';
 import Layout from './Layout/Layout';
 import Auth from './Auth/Auth';
