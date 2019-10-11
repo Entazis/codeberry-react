@@ -1,15 +1,45 @@
-import React
-    from 'react';
-import {Redirect} from 'react-router';
+import React, { useCallback } from 'react';
+import { Redirect } from 'react-router';
 import { Container, Col, Row, Alert } from 'react-bootstrap';
 
 import classes from './Auth.module.css';
 import SocialLogin from './SocialLogin/SocialLogin';
 import LoginForm from './LoginForm/LoginForm';
+import { useAuth } from '../hooks/useAuth';
 
 
-const auth = (props) => {
-    const redirect = (props.user.token) ? <Redirect to="/lessons"/> : null;
+const Auth = () => {
+    const auth = useAuth();
+    const redirect = (auth.user) ? <Redirect to="/lessons"/> : null;
+
+    const signOutUser = useCallback(async () => {
+        try {
+            await auth.signOut();
+            localStorage.removeItem('user');
+            return <Redirect to={'/'} />;
+        } catch (e) {
+            console.log('Something went wrong: ', e);
+        }
+    }, [auth]);
+
+    const signInUser = useCallback(async (email, password) => {
+        try {
+            await auth.signIn(email, password);
+            localStorage.setItem('user', auth.user);
+            setTimeout(() => {
+                signOutUser();
+            }, 3600 * 1000);
+            return <Redirect to={'/'} />;
+        } catch (e) {
+            console.log('Something went wrong: ', e);
+        }
+    }, [auth, signOutUser]);
+
+    const onUserSignedIn = useCallback((e) => {
+        e.preventDefault();
+        signInUser();
+    }, [signInUser]);
+
     return (
         <Container fluid>
             {redirect}
@@ -32,12 +62,12 @@ const auth = (props) => {
                             <div className={classes.LinerContainer}>
                                 <h5 className={classes.Liner}>Use one of your existing accounts</h5>
                             </div>
-                            <SocialLogin signedIn={props.signedIn} signedOut={props.signedOut}/>
+                            <SocialLogin signedIn={() => {}} signedOut={() => {}}/>
 
                             <div className={classes.LinerContainer}>
                                 <h5 className={classes.Liner}> Or log in with your email address </h5>
                             </div>
-                            <LoginForm signedIn={props.signedIn} signedOut={props.signedOut}/>
+                            <LoginForm signedIn={onUserSignedIn}/>
                         </Col>
                     </Row>
                 </Col>
@@ -46,4 +76,4 @@ const auth = (props) => {
     );
 };
 
-export default auth;
+export default Auth;

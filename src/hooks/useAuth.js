@@ -1,12 +1,10 @@
 import React, { useState, useEffect, useContext, createContext } from 'react';
-import nconf from 'nconf';
-import * as firebase from 'firebase';
+import * as firebase from 'firebase/app';
 import 'firebase/auth';
 
-nconf.file({
-    file: '../../env.local.json'
-});
-firebase.initializeApp(nconf.get('firebase'));
+import { firebaseConfig } from './config';
+
+firebase.initializeApp(firebaseConfig);
 
 const authContext = createContext({});
 
@@ -22,12 +20,27 @@ export const useAuth = () => {
 function useProvideAuth() {
     const [user, setUser] = useState(null);
 
+    const addUserName = (user) => {
+        return {
+            ...user,
+            userName: 'defaultUserName',
+            userInitials: 'XX'
+        };
+    };
+
+    const addExpirationDate = (user) => {
+        return {
+            ...user,
+            expirationDate: new Date(new Date().getTime() + 3600 * 1000)
+        }
+    };
+
     const signIn = (email, password) => {
         return firebase
             .auth()
             .signInWithEmailAndPassword(email, password)
             .then(response => {
-                setUser(response.user);
+                setUser(addUserName(addExpirationDate(response.user)));
                 return response.user;
             });
     };
@@ -37,7 +50,7 @@ function useProvideAuth() {
             .auth()
             .createUserWithEmailAndPassword(email, password)
             .then(response => {
-                setUser(response.user);
+                setUser(addUserName(addExpirationDate(response.user)));
                 return response.user;
             });
     };
@@ -72,7 +85,7 @@ function useProvideAuth() {
     useEffect(() => {
         const unsubscribe = firebase.auth().onAuthStateChanged(user => {
             if (user) {
-                setUser(user);
+                setUser(addUserName(addExpirationDate(user)));
             } else {
                 setUser(false);
             }

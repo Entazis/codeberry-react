@@ -6,8 +6,11 @@ import { faUser, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 import classes from './Header.module.css';
 import OnBoardingPanel from './OnboardingPanel/OnBoardingPanel';
+import { useAuth } from '../../hooks/useAuth';
 
-const header = (props) => {
+const Header = () => {
+    const auth = useAuth();
+
     return (
         <header className={classes.HeaderFixedTop}>
             <Navbar
@@ -41,7 +44,7 @@ const header = (props) => {
                         </Nav.Link>
                         <NavDropdown
                                 alignRight
-                                title={props.user.userInitials}
+                                title={(auth.user) ? auth.user.userInitials : ''}
                                 className={classes.UserMenu}
                                 id="user-nav-dropdown">
                                 <NavDropdown.Item href="/user/search"><OnBoardingPanel /></NavDropdown.Item>
@@ -56,4 +59,4 @@ const header = (props) => {
     );
 };
 
-export default header;
+export default Header;
