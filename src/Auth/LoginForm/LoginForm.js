@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     Button,
     FormControl,
@@ -13,10 +13,19 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import classes
     from './LoginForm.module.css';
+import classesAuth
+    from '../Auth.module.css';
 
-const loginForm = (props) => {
+const LoginForm = (props) => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [isSignIn, setIsSignIn] = useState(true);
+
     return (
         <React.Fragment>
+            <div className={classesAuth.LinerContainer}>
+                <h5 className={classesAuth.Liner}> Or log in with your email address </h5>
+            </div>
             <form
                 action="/lessons">
                 <FormGroup>
@@ -27,7 +36,9 @@ const loginForm = (props) => {
                         <FormControl
                             type="email"
                             name="email"
-                            placeholder="my@email.com" />
+                            placeholder="my@email.com"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}/>
                     </InputGroup>
                 </FormGroup>
                 <FormGroup>
@@ -38,20 +49,36 @@ const loginForm = (props) => {
                         <FormControl
                             type="password"
                             name="password"
-                            placeholder="MyPassword" />
+                            placeholder="MyPassword"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}/>
                     </InputGroup>
                 </FormGroup>
 
-                <Button onClick={props.signedIn} variant={"primary"} className={[classes.btnBlock, classes.btnPrimary].join(' ')}>Log in <FontAwesomeIcon icon={faSignInAlt} /></Button>
+                <Button onClick={() => props.signIn(email, password)} variant={"primary"} className={[classes.btnBlock, classes.btnPrimary].join(' ')}>
+                    {isSignIn ? 'Log in' : 'Sign up'} <FontAwesomeIcon icon={faSignInAlt} />
+                </Button>
             </form>
-            <p className="text-right text-muted">
-                <small><a href="/auth/password-reset">Forgot your password?</a></small>
-            </p>
+            {isSignIn ? (
+                <p className="text-right text-muted">
+                    <small><a href="/auth/password-reset">Forgot your password?</a></small>
+                </p>
+            ) : null}
             <p className="text-muted">
-                <small>Don't have an account? <a href="/auth/signup"> Sign up now</a>!</small>
+                <small>
+                    {isSignIn ? 'Don\'t have an account? ' : 'Already have an account? '}
+                    <a href={'#'} onClick={() => setIsSignIn(!isSignIn)}>
+                        {isSignIn ? 'Sign up now' : 'Log in now.'}
+                    </a>!
+                </small>
             </p>
+            {!isSignIn ? (
+                <p className="text-right text-muted">
+                    <small><a href="/auth/password-reset">Or forgot your password?</a></small>
+                </p>
+            ) : null}
         </React.Fragment>
     );
 };
 
-export default loginForm;
+export default LoginForm;

@@ -35,11 +35,6 @@ const Auth = () => {
         }
     }, [auth, signOutUser]);
 
-    const onUserSignedIn = useCallback((e) => {
-        e.preventDefault();
-        signInUser();
-    }, [signInUser]);
-
     return (
         <Container fluid>
             {redirect}
@@ -59,15 +54,8 @@ const Auth = () => {
                     </Row>
                     <Row>
                         <Col md={{span: 8, offset: 2}}>
-                            <div className={classes.LinerContainer}>
-                                <h5 className={classes.Liner}>Use one of your existing accounts</h5>
-                            </div>
                             <SocialLogin signedIn={() => {}} signedOut={() => {}}/>
-
-                            <div className={classes.LinerContainer}>
-                                <h5 className={classes.Liner}> Or log in with your email address </h5>
-                            </div>
-                            <LoginForm signedIn={onUserSignedIn}/>
+                            <LoginForm signIn={(email, password) => signInUser(email, password)}/>
                         </Col>
                     </Row>
                 </Col>

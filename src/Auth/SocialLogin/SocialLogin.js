@@ -2,6 +2,8 @@ import React
     from 'react';
 import classes
     from './SocialLogin.module.css';
+import classesAuth
+    from '../Auth.module.css';
 import {
     Col,
     Row
@@ -15,6 +17,9 @@ import {
 const socialLogin = (props) => {
     return (
         <React.Fragment>
+            <div className={classesAuth.LinerContainer}>
+                <h5 className={classesAuth.Liner}>Use one of your existing accounts</h5>
+            </div>
             <Row id={"oauth-box"}>
                 <Col sm={12}>
                     <a href="/auth/facebook"
