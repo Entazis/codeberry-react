@@ -9,7 +9,7 @@ import LoginForm from './LoginForm/LoginForm';
 
 
 const auth = (props) => {
-    const redirect = (props.user.isSignedIn) ? <Redirect to="/lessons"/> : null;
+    const redirect = (props.user.token) ? <Redirect to="/lessons"/> : null;
     return (
         <Container fluid>
             {redirect}
