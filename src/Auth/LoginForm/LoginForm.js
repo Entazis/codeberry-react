@@ -67,9 +67,11 @@ const LoginForm = (props) => {
             <p className="text-muted">
                 <small>
                     {isSignIn ? 'Don\'t have an account? ' : 'Already have an account? '}
-                    <a href={'#'} onClick={() => setIsSignIn(!isSignIn)}>
+                    <button
+                        className={classes.AuthSwitchButton}
+                        onClick={() => setIsSignIn(!isSignIn)}>
                         {isSignIn ? 'Sign up now' : 'Log in now.'}
-                    </a>!
+                    </button>!
                 </small>
             </p>
             {!isSignIn ? (

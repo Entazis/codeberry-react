@@ -12,3 +12,11 @@
     display: block;
     width: 100%;
 }
+
+.AuthSwitchButton {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    cursor: pointer;
+    color: #c74f78;
+}
