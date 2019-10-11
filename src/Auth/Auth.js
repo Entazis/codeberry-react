@@ -26,9 +26,18 @@ const Auth = () => {
         try {
             await auth.signIn(email, password);
             localStorage.setItem('user', auth.user);
-            setTimeout(() => {
-                signOutUser();
-            }, 3600 * 1000);
+            setTimeout(() => signOutUser(), 3600 * 1000);
+            return <Redirect to={'/'} />;
+        } catch (e) {
+            console.log('Something went wrong: ', e);
+        }
+    }, [auth, signOutUser]);
+
+    const signUpUser = useCallback(async (email, password) => {
+        try {
+            await auth.signUp(email, password);
+            localStorage.setItem('user', auth.user);
+            setTimeout(() => signOutUser(), 3600 * 1000);
             return <Redirect to={'/'} />;
         } catch (e) {
             console.log('Something went wrong: ', e);
@@ -55,7 +64,9 @@ const Auth = () => {
                     <Row>
                         <Col md={{span: 8, offset: 2}}>
                             <SocialLogin signedIn={() => {}} signedOut={() => {}}/>
-                            <LoginForm signIn={(email, password) => signInUser(email, password)}/>
+                            <LoginForm
+                                signIn={(email, password) => signInUser(email, password)}
+                                signUp={(email, password) => signUpUser(email, password)}/>
                         </Col>
                     </Row>
                 </Col>
