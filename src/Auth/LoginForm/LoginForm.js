@@ -24,7 +24,7 @@ const LoginForm = (props) => {
     return (
         <React.Fragment>
             <div className={classesAuth.LinerContainer}>
-                <h5 className={classesAuth.Liner}> Or log in with your email address </h5>
+                <h5 className={classesAuth.Liner}>Or {isSignIn ? 'log in' : 'sign up'} with your email address </h5>
             </div>
             <form
                 action="/lessons">
@@ -55,7 +55,11 @@ const LoginForm = (props) => {
                     </InputGroup>
                 </FormGroup>
 
-                <Button onClick={() => props.signIn(email, password)} variant={"primary"} className={[classes.btnBlock, classes.btnPrimary].join(' ')}>
+                <Button onClick={() => (isSignIn) ?
+                    props.signIn(email, password) :
+                    props.signUp(email, password)}
+                        variant={"primary"}
+                        className={[classes.btnBlock, classes.btnPrimary].join(' ')}>
                     {isSignIn ? 'Log in' : 'Sign up'} <FontAwesomeIcon icon={faSignInAlt} />
                 </Button>
             </form>
