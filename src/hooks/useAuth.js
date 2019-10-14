@@ -19,20 +19,13 @@ export const useAuth = () => {
 
 function useProvideAuth() {
     const [user, setUser] = useState(null);
+    const [userData, setUserData] = useState({});
 
-    const addUserName = (user) => {
+    const getUserData = () => {
         return {
-            ...user,
             userName: 'defaultUserName',
             userInitials: 'XX'
         };
-    };
-
-    const addExpirationDate = (user) => {
-        return {
-            ...user,
-            expirationDate: new Date(new Date().getTime() + 3600 * 1000)
-        }
     };
 
     const signIn = (email, password) => {
@@ -40,7 +33,8 @@ function useProvideAuth() {
             .auth()
             .signInWithEmailAndPassword(email, password)
             .then(response => {
-                setUser(addUserName(addExpirationDate(response.user)));
+                setUser(response.user);
+                setUserData(getUserData());
                 return response.user;
             });
     };
@@ -50,7 +44,8 @@ function useProvideAuth() {
             .auth()
             .createUserWithEmailAndPassword(email, password)
             .then(response => {
-                setUser(addUserName(addExpirationDate(response.user)));
+                setUser(response.user);
+                setUserData(getUserData());
                 return response.user;
             });
     };
@@ -60,7 +55,8 @@ function useProvideAuth() {
             .auth()
             .signOut()
             .then(() => {
-                setUser(false);
+                setUser(null);
+                setUserData({});
             });
     };
 
@@ -85,9 +81,11 @@ function useProvideAuth() {
     useEffect(() => {
         const unsubscribe = firebase.auth().onAuthStateChanged(user => {
             if (user) {
-                setUser(addUserName(addExpirationDate(user)));
+                setUser(user);
+                setUserData(getUserData());
             } else {
-                setUser(false);
+                setUser(null);
+                setUserData({});
             }
         });
         return () => unsubscribe();
@@ -95,6 +93,7 @@ function useProvideAuth() {
 
     return {
         user,
+        userData,
         signIn: signIn,
         signUp: signUp,
         signOut: signOut,

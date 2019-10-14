@@ -1,21 +1,20 @@
 import React from 'react';
-import {Redirect} from 'react-router';
 
 import classes from './Lessons.module.css'
 import Navigation from './Navigation/Navigation';
 import Content from './Content/Content';
+import {useWindowSize} from '../hooks/useWindowSize';
 
-const lessons = (props) => {
-    const redirect = (!props.user.token) ? <Redirect to="/auth"/> : null;
+const Lessons = () => {
+    const windowSize = useWindowSize();
 
     const controllerClasses = [classes.Controller];
-    if (props.isLessonsOnMobile) {
+    if (windowSize.width < 1360) {
         controllerClasses.push(classes.BottomFix);
     }
 
     return (
         <React.Fragment>
-            {redirect}
             <div className={classes.Content}>
                 <Content />
             </div>
@@ -26,4 +25,4 @@ const lessons = (props) => {
     );
 };
 
-export default lessons;
+export default Lessons;

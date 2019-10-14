@@ -1,14 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { ProvideAuth } from "./hooks/useAuth";
 
 const app = (
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>
+    <ProvideAuth>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </ProvideAuth>
 );
 
 ReactDOM.render(app, document.getElementById('root'));

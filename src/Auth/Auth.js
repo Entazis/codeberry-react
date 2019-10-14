@@ -1,5 +1,4 @@
 import React, { useCallback } from 'react';
-import { Redirect } from 'react-router';
 import { Container, Col, Row, Alert } from 'react-bootstrap';
 
 import classes from './Auth.module.css';
@@ -10,43 +9,25 @@ import { useAuth } from '../hooks/useAuth';
 
 const Auth = () => {
     const auth = useAuth();
-    const redirect = (auth.user) ? <Redirect to="/lessons"/> : null;
 
-    const signOutUser = useCallback(async () => {
+    const signInUser = useCallback(async (email, password) => {
         try {
-            await auth.signOut();
-            localStorage.removeItem('user');
-            return <Redirect to={'/'} />;
+            await auth.signIn(email, password);
         } catch (e) {
             console.log('Something went wrong: ', e);
         }
     }, [auth]);
 
-    const signInUser = useCallback(async (email, password) => {
-        try {
-            await auth.signIn(email, password);
-            localStorage.setItem('user', auth.user);
-            setTimeout(() => signOutUser(), 3600 * 1000);
-            return <Redirect to={'/'} />;
-        } catch (e) {
-            console.log('Something went wrong: ', e);
-        }
-    }, [auth, signOutUser]);
-
     const signUpUser = useCallback(async (email, password) => {
         try {
             await auth.signUp(email, password);
-            localStorage.setItem('user', auth.user);
-            setTimeout(() => signOutUser(), 3600 * 1000);
-            return <Redirect to={'/'} />;
         } catch (e) {
             console.log('Something went wrong: ', e);
         }
-    }, [auth, signOutUser]);
+    }, [auth]);
 
     return (
         <Container fluid>
-            {redirect}
             <Row>
                 <Col md={{span: 6, offset: 3}}>
                     <Row>
