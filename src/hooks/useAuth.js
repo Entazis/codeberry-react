@@ -20,6 +20,7 @@ export const useAuth = () => {
 function useProvideAuth() {
     const [user, setUser] = useState(null);
     const [userData, setUserData] = useState({});
+    const [loading, setLoading] = useState(false);
 
     const getUserData = () => {
         return {
@@ -79,6 +80,7 @@ function useProvideAuth() {
     };
 
     useEffect(() => {
+        setLoading(true);
         const unsubscribe = firebase.auth().onAuthStateChanged(user => {
             if (user) {
                 setUser(user);
@@ -87,6 +89,7 @@ function useProvideAuth() {
                 setUser(null);
                 setUserData({});
             }
+            setLoading(false);
         });
         return () => unsubscribe();
     }, []);
@@ -94,6 +97,7 @@ function useProvideAuth() {
     return {
         user,
         userData,
+        loading,
         signIn: signIn,
         signUp: signUp,
         signOut: signOut,
