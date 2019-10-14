@@ -25,7 +25,8 @@ function useProvideAuth() {
     const getUserData = () => {
         return {
             userName: 'defaultUserName',
-            userInitials: 'XX'
+            userInitials: 'XX',
+            isAdmin: true
         };
     };
 
