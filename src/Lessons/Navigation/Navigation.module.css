@@ -9,17 +9,77 @@
     z-index: 999;
 }
 
+.ControllerBottom {
+    height: 80px;
+    width: 100%;
+    bottom: 0;
+    top: auto;
+    left: auto;
+    z-index: 999;
+    max-width: 100%;
+}
+
 .Header {
-    border-radius: 4px;
-    flex-wrap: wrap;
-    justify-content: flex-start;
     height: 165px;
     padding: 10px;
     background-color: white;
     border: 1px solid #e1e8ed;
-    display: flex;
+    display: inline-block;
+    justify-content: space-between;
     cursor: pointer;
     position: relative;
+}
+
+.HeaderBottom {
+    height: 80px;
+    padding: 5px;
+    display: flex;
+}
+
+.Titles {
+    margin: 0 10px;
+    flex-basis: 100%;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.ModuleTitle {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 280px;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.LessonTitle {
+    font-size: 16px;
+}
+
+.Thumbnail {
+    height: 70px;
+    width: 70px;
+    position: relative;
+    flex-basis: 70px;
+    align-self: flex-end;
+    order: 10;
+}
+
+.ThumbnailBottom {
+    order: -1;
+}
+
+.ThumbnailImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 100%;
+    border-radius: 4px;
+    vertical-align: middle;
+    border: 0;
 }
 
 .Body {
@@ -29,14 +89,4 @@
     background-color: white;
     overflow-y: scroll;
     overflow-x: hidden;
-}
-
-.BottomFix {
-    height: 80px;
-    width: 100%;
-    bottom: 0;
-    top: auto;
-    left: auto;
-    z-index: 999;
-    max-width: 100%;
 }
