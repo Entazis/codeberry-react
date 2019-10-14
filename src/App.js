@@ -18,11 +18,14 @@ const App = () => {
                 <Switch>
                     <Route path='/auth/logout' render={() => {
                         auth.signOut().then(() => console.log('Successfully signed out!'));
-                        return <Redirect to='/' />;
+                        return <Redirect to='/auth' />;
                     }} />
-                    <Route path='/auth' component={Auth} />
-                    <Route path="/lessons" component={Lessons} />
-                    <Route path='/' render={() => 'Main page'} />
+                    <Route path="/lessons" render={() => {
+                        return (auth.user) ? <Lessons /> : <Redirect to='/auth' />;
+                    }} />
+                    <Route path='/auth' render={() => {
+                        return (auth.user) ? <Redirect to='/lessons' /> : <Auth />;
+                    }} />
                 </Switch>
             </Layout>
         </div>
