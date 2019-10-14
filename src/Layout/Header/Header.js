@@ -47,7 +47,7 @@ const Header = () => {
                             </Nav.Link>
                             <NavDropdown
                                 alignRight
-                                title={(auth.user) ? auth.user.userInitials : ''}
+                                title={(auth.user) ? auth.userData.userInitials : ''}
                                 className={classes.UserMenu}
                                 id="user-nav-dropdown">
                                 <NavDropdown.Item href="/user/search"><OnBoardingPanel /></NavDropdown.Item>
