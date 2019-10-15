@@ -8,7 +8,7 @@ const chapters = (props) => {
     const chapterList = props.chapters.map((chapter, index) =>
         {
             return (
-            <div className={classes.Chapter} id={chapter.id}>
+            <div className={classes.Chapter} key={chapter.id}>
                 <Card>
                     <Card.Header>
                         <Accordion.Toggle as={Button} variant="link" eventKey={'c' + index}>
