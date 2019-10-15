@@ -8,6 +8,7 @@ import classes from './App.module.css';
 import Layout from './Layout/Layout';
 import Auth from './Auth/Auth';
 import Lessons from './Lessons/Lessons';
+import Profile from './Profile/Profile';
 import { useAuth } from "./hooks/useAuth";
 
 const App = () => {
@@ -27,7 +28,10 @@ const App = () => {
                 <Route path='/auth' render={() => {
                     return (auth.user) ? <Redirect to='/lessons' /> : <Auth />;
                 }} />
-                <Redirect to='/lessons' />>
+                <Route path='/user/profile' render={() => {
+                    return (auth.user) ? <Profile /> : <Redirect to='/auth' />;
+                }} />
+                <Redirect to='/lessons' />
             </Switch>
         );
     }
