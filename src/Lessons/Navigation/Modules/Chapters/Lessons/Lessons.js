@@ -5,9 +5,9 @@ import {Card} from 'react-bootstrap';
 import {NavLink} from 'react-router-dom';
 
 const lessons = (props) => {
-    const lessonList = props.lessons.map((lesson, index) =>
+    const lessonList = props.lessons.map((lesson) =>
         (
-            <div className={classes.Lesson} id={lesson.id + index}>
+            <div className={classes.Lesson} id={lesson.id}>
                 <Card>
                     <NavLink to='/lessons'>
                         {lesson.title}

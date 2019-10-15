@@ -5,19 +5,17 @@ import {Accordion, Button, Card} from 'react-bootstrap';
 import Lessons from './Lessons/Lessons';
 
 const chapters = (props) => {
-    console.log('chapters!');
     const chapterList = props.chapters.map((chapter, index) =>
         {
-            console.log('chapter index:', index);
             return (
-            <div className={classes.Chapter} id={chapter.id + index}>
+            <div className={classes.Chapter} id={chapter.id}>
                 <Card>
                     <Card.Header>
-                        <Accordion.Toggle as={Button} variant="link" eventKey={index}>
+                        <Accordion.Toggle as={Button} variant="link" eventKey={'c' + index}>
                             {chapter.title}
                         </Accordion.Toggle>
                     </Card.Header>
-                    <Accordion.Collapse eventKey={index}>
+                    <Accordion.Collapse eventKey={'c' + index}>
                         <Card.Body>
                             <Lessons lessons={chapter.lessons}/>
                         </Card.Body>
@@ -28,7 +26,6 @@ const chapters = (props) => {
         }
     );
 
-    console.log(chapterList);
     return (
         <div className={classes.Chapters}>
             {chapterList}

@@ -148,7 +148,7 @@ const Navigation = () => {
             <Accordion defaultActiveKey="0">
                 <Card>
                     <Card.Header>
-                        <Accordion.Toggle as={Button} variant="link" eventKey="1">
+                        <Accordion.Toggle as={Button} variant="link" eventKey="h1">
                             <div className={classes.Titles}>
                                 <h1 className={classes.ModuleTitle} title={selectedModule.title}>{selectedModule.title} <small className="text-muted">({selectedModule.progress})</small></h1>
                                 <p className={classes.chapterTitle}>{selectedChapter.title}</p>
@@ -158,7 +158,7 @@ const Navigation = () => {
                             </div>
                         </Accordion.Toggle>
                     </Card.Header>
-                    <Accordion.Collapse eventKey="1">
+                    <Accordion.Collapse eventKey="h1">
                         <Card.Body>
                             <Accordion defaultActiveKey="0">
                                 <Modules modules={modules}/>
