@@ -9,7 +9,7 @@ import {
 import Navigation from '../Lessons/Navigation/Navigation';
 import SubscriptionDetails from './SubscriptionDetails/SubscriptionDetails';
 import PersonalData from './PersonalData/PersonalData';
-
+import Badges from './Badges/Badges';
 
 const profile = () => {
     return (
@@ -25,6 +25,7 @@ const profile = () => {
                         </Row>
                         <SubscriptionDetails/>
                         <PersonalData/>
+                        <Badges/>
                     </Col>
                 </Row>
             </Container>
