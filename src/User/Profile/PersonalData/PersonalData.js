@@ -7,6 +7,7 @@ import {
 } from 'react-bootstrap';
 import classes
     from '../Profile.module.css';
+import {Link} from 'react-router-dom';
 
 const personalData = () => {
     return (
@@ -41,8 +42,8 @@ const personalData = () => {
                     <Row>
                         <Col sm={12}>
                             <p className="text-center">
-                                <a className="btn btn-lg btn-primary"
-                                   href="/user/confirm-email">Send confirmation email</a>
+                                <Link className="btn btn-lg btn-primary"
+                                   to="/user/confirm-email">Send confirmation email</Link>
                             </p>
                         </Col>
                     </Row>

@@ -15,6 +15,7 @@ import classes
     from './LoginForm.module.css';
 import classesAuth
     from '../Auth.module.css';
+import {Link} from 'react-router-dom';
 
 const LoginForm = (props) => {
     const [email, setEmail] = useState('');
@@ -65,7 +66,7 @@ const LoginForm = (props) => {
             </form>
             {isSignIn ? (
                 <p className="text-right text-muted">
-                    <small><a href="/auth/password-reset">Forgot your password?</a></small>
+                    <small><Link to="/auth/password-reset">Forgot your password?</Link></small>
                 </p>
             ) : null}
             <p className="text-muted">
@@ -80,7 +81,7 @@ const LoginForm = (props) => {
             </p>
             {!isSignIn ? (
                 <p className="text-right text-muted">
-                    <small><a href="/auth/password-reset">Or forgot your password?</a></small>
+                    <small><Link to="/auth/password-reset">Or forgot your password?</Link></small>
                 </p>
             ) : null}
         </React.Fragment>

@@ -13,6 +13,7 @@ import {
     faFacebook,
     faGoogle
 } from '@fortawesome/free-brands-svg-icons';
+import {Link} from 'react-router-dom';
 
 const socialLogin = (props) => {
     return (
@@ -22,16 +23,16 @@ const socialLogin = (props) => {
             </div>
             <Row id={"oauth-box"}>
                 <Col sm={12}>
-                    <a href="/auth/facebook"
+                    <Link to="/auth/facebook"
                        onClick={props.signedIn}
                        className={[classes.btn, classes.btnBlock, classes.btnSocial, classes.btnFacebook].join(' ')}>
                         <FontAwesomeIcon icon={faFacebook} /> Log in with Facebook
-                    </a>
-                    <a href="/auth/google"
+                    </Link>
+                    <Link to="/auth/google"
                        onClick={props.signedIn}
                        className={[classes.btn, classes.btnBlock, classes.btnSocial, classes.btnGoogle].join(' ')}>
                         <FontAwesomeIcon icon={faGoogle} /> Log in with Google
-                    </a>
+                    </Link>
                 </Col>
             </Row>
         </React.Fragment>

@@ -20,16 +20,16 @@ const Footer = (props) => {
                 alt="Logo"
                 className={[classes.LogoImg, classes.ImgResponsive].join(' ')}
                 src="/images/logo/logo-60x60.png" /></Link>
-            <a href="https://codeberryschool.com">CodeBerry Programming School © 2019</a>
+            <Link to="https://codeberryschool.com">CodeBerry Programming School © 2019</Link>
             <ul className={classes.LanguageSelector}>
                 <li className={classes.DropUp}>
-                    <a className="a-navbar dropdown-toggle"
-                       href="/"
+                    <Link className="a-navbar dropdown-toggle"
+                       to="/"
                        data-toggle="dropdown">
-                        <FontAwesomeIcon icon={faFlagUsa} /><span className="caret" /></a>
+                        <FontAwesomeIcon icon={faFlagUsa} /><span className="caret" /></Link>
                     <ul className="dropdown-menu">
                         <li>
-                            <a href="/"><FontAwesomeIcon icon={faFlagUsa} /> English
+                            <Link to="/"><FontAwesomeIcon icon={faFlagUsa} /> English
                                 <form
                                     id="setLang-en-US"
                                     action="/i18n/setlocale"
@@ -39,7 +39,7 @@ const Footer = (props) => {
                                         name="locale"
                                         value="en-US" />
                                 </form>
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </li>

@@ -4,6 +4,7 @@ import {
     Col,
     Card
 } from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 
 const finishedLessons = () => {
     return (
@@ -18,7 +19,7 @@ const finishedLessons = () => {
                             <li className="list-group-item"
                                 id="quinin-assignment01">
                                 <small>
-                                    <a href="/lessons/welcome-project/quinin/0">Welcome, Future Programmer!</a>
+                                    <Link to="/lessons/welcome-project/quinin/0">Welcome, Future Programmer!</Link>
                                     <span className="text-muted" title="2018. 05. 10. 08:29"> | 2018. 05. 10.</span>
                                     <span> | career-change;hobby;curious;websites;apps;gadgets;</span>
                                 </small>
@@ -26,7 +27,7 @@ const finishedLessons = () => {
                             <li className="list-group-item"
                                 id="quinin-assignment02">
                                 <small>
-                                    <a href="/lessons/welcome-project/quinin/1">So What Does a Programmer Do?</a>
+                                    <Link to="/lessons/welcome-project/quinin/1">So What Does a Programmer Do?</Link>
                                     <span className="text-muted" title="2018. 05. 10. 08:29"> | 2018. 05. 10.</span>
                                     <span> | </span>
                                 </small>
@@ -34,7 +35,7 @@ const finishedLessons = () => {
                             <li className="list-group-item"
                                 id="quinin-assignment03">
                                 <small>
-                                    <a href="/lessons/welcome-project/quinin/2">Breaking the Language Barrier</a>
+                                    <Link to="/lessons/welcome-project/quinin/2">Breaking the Language Barrier</Link>
                                     <span className="text-muted" title="2018. 05. 10. 08:30"> | 2018. 05. 10.</span>
                                     <span> | </span>
                                 </small>
