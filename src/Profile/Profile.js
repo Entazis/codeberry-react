@@ -10,6 +10,7 @@ import Navigation from '../Lessons/Navigation/Navigation';
 import SubscriptionDetails from './SubscriptionDetails/SubscriptionDetails';
 import PersonalData from './PersonalData/PersonalData';
 import Badges from './Badges/Badges';
+import FinishedLessons from './FinishedLessons/FinishedLessons';
 
 const profile = () => {
     return (
@@ -26,6 +27,7 @@ const profile = () => {
                         <SubscriptionDetails/>
                         <PersonalData/>
                         <Badges/>
+                        <FinishedLessons/>
                     </Col>
                 </Row>
             </Container>

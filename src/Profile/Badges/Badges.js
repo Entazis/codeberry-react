@@ -15,7 +15,7 @@ const badges = () => {
                     <Row>
                         <Col md={3}>
                             <img
-                                src="/badge/images/06.png"
+                                src="/logo192.png"
                                 className={classes.BadgeImgUnlocked}
                                 alt="Badge"/>
                         </Col>
@@ -34,7 +34,7 @@ const badges = () => {
                     <Row>
                         <Col md={3}>
                             <img
-                                src="/badge/images/01.png"
+                                src="/logo192.png"
                                 className={classes.BadgeImgInProgress}
                                 alt="Badge"/>
                         </Col>
