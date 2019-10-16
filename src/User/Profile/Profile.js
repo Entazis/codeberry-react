@@ -4,7 +4,7 @@ import {Container, Row, Col} from 'react-bootstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faGoogle} from '@fortawesome/free-brands-svg-icons';
 
-import Navigation from '../Lessons/Navigation/Navigation';
+import Navigation from '../../Lessons/Navigation/Navigation';
 import SubscriptionDetails from './SubscriptionDetails/SubscriptionDetails';
 import PersonalData from './PersonalData/PersonalData';
 import Badges from './Badges/Badges';

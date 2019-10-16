@@ -1,13 +1,9 @@
 import React from 'react';
-import {
-    Col,
-    FormGroup,
-    Row
-} from 'react-bootstrap';
-import classes
-    from '../Profile.module.css';
+import {Col, FormGroup, Row} from 'react-bootstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faSlack} from '@fortawesome/free-brands-svg-icons';
+
+import classes from '../Profile.module.css';
 
 const subscriptionDetails = () => {
     return (

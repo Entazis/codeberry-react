@@ -8,7 +8,7 @@ import classes from './App.module.css';
 import Layout from './Layout/Layout';
 import Auth from './Auth/Auth';
 import Lessons from './Lessons/Lessons';
-import Profile from './Profile/Profile';
+import Profile from './User/Profile/Profile';
 import { useAuth } from "./hooks/useAuth";
 
 const App = () => {
