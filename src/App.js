@@ -10,6 +10,7 @@ import Auth from './Auth/Auth';
 import Lessons from './Lessons/Lessons';
 import Profile from './User/Profile/Profile';
 import Referral from './User/Referral/Referral';
+import Search from './User/Search/Search';
 import { useAuth } from "./hooks/useAuth";
 
 const App = () => {
@@ -34,6 +35,9 @@ const App = () => {
                 }}/>
                 <Route path='/user/referral' render={() => {
                     return (auth.user) ? <Referral/> : <React to='/auth'/>;
+                }}/>
+                <Route path='/user/search' render={() => {
+                    return (auth.user) ? <Search/> : <React to='/auth'/>;
                 }}/>
                 <Redirect to='/lessons'/>
             </Switch>
