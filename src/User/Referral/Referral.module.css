@@ -1,0 +1,36 @@
+.Referral {
+    text-align: center;
+}
+
+.ReferralHead {
+    color: white;
+    background: linear-gradient(180deg, #00BCDD 0%, #00EAF7 100%);
+}
+
+.VerticalPadding {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.TopBuffer {
+    margin-top: 20px;
+}
+
+.BgAlt {
+    background-color: #f0f0f2;
+}
+
+.InputGroupBtn {
+    position: relative;
+    font-size: 0;
+    white-space: nowrap;
+    width: 1%;
+    vertical-align: middle;
+    display: table-cell;
+    border-collapse: separate;
+}
+
+.ReferralCounter {
+    font-size: 31px;
+    color: #c74f78;
+}
