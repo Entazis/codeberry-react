@@ -2,6 +2,25 @@
     height: 60px;
 }
 
+.navbar-light .navbar-toggler {
+    position: absolute;
+    float: right;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.navbar-collapse {
+    background-color: #f0f0f2;
+}
+
+.navbar-nav {
+    align-items: center;
+}
+
 .btn.btn-primary {
     color: #fff;
     background-image: linear-gradient(to bottom, #cd6287 0%, #c03d6a 100%);
