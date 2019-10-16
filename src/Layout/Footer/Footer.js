@@ -4,8 +4,11 @@ import {Link} from 'react-router-dom';
 import classes from './Footer.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFlagUsa } from "@fortawesome/free-solid-svg-icons";
+import {useAuth} from '../../hooks/useAuth';
 
-const footer = (props) => {
+const Footer = (props) => {
+    const auth = useAuth();
+
     const classList = [classes.Footer];
     if (props.isLessonsOnMobile) {
         classList.push(classes.FooterUp);
@@ -41,8 +44,9 @@ const footer = (props) => {
                     </ul>
                 </li>
             </ul>
+            {auth.user ? <span className="text-muted"><small>- You are an admin</small></span> : null}
         </footer>
     );
 };
 
-export default footer;
+export default Footer;

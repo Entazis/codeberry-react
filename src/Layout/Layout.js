@@ -10,11 +10,11 @@ const Layout = (props) => {
 
     return (
         <div className={classes.Layout}>
-            <Header />
+            <Header/>
             <main className={classes.Main}>
                 {props.children}
             </main>
-            <Footer isLessonsOnMobile={windowSize.width < 1360 && window.location.pathname.startsWith('/lessons')} />
+            <Footer isLessonsOnMobile={windowSize.width < 1360 && window.location.pathname.startsWith('/lessons')}/>
         </div>
     );
 };
