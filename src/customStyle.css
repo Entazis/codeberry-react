@@ -33,6 +33,10 @@
     text-align: left;
 }
 
+.accordion > .card .card-header {
+    margin-bottom: auto;
+}
+
 a, a:hover, a:focus {
     cursor: pointer;
     color: #c74f78;
