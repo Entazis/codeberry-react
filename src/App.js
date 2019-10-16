@@ -11,6 +11,14 @@ import Lessons from './Lessons/Lessons';
 import Profile from './User/Profile/Profile';
 import Referral from './User/Referral/Referral';
 import Search from './User/Search/Search';
+import Projects from './CurriculumRepository/Projects/Projects';
+import Concepts from './CurriculumRepository/Concepts/Concepts';
+import CurriculumProcesses from './CurriculumRepository/Processes/Processes';
+import i18nProcesses from './i18n/Processes/Processes';
+import Reference from './Reference/Reference';
+import Stats from './Stats/Stat';
+import TestTools from './TestTools/TestTools';
+
 import { useAuth } from "./hooks/useAuth";
 
 const App = () => {
@@ -34,10 +42,31 @@ const App = () => {
                     return (auth.user) ? <Profile/> : <Redirect to='/auth'/>;
                 }}/>
                 <Route path='/user/referral' render={() => {
-                    return (auth.user) ? <Referral/> : <React to='/auth'/>;
+                    return (auth.user) ? <Referral/> : <Redirect to='/auth'/>;
                 }}/>
                 <Route path='/user/search' render={() => {
-                    return (auth.user) ? <Search/> : <React to='/auth'/>;
+                    return (auth.user) ? <Search/> : <Redirect to='/auth'/>;
+                }}/>
+                <Route path='/curriculum-repository/projects' render={() => {
+                    return (auth.user) ? <Projects/> : <Redirect to='/auth'/>;
+                }}/>
+                <Route path='/curriculum-repository/concepts' render={() => {
+                    return (auth.user) ? <Concepts/> : <Redirect to='/auth'/>;
+                }}/>
+                <Route path='/curriculum-repository/processes' render={() => {
+                    return (auth.user) ? <CurriculumProcesses/> : <Redirect to='/auth'/>;
+                }}/>
+                <Route path='/i18n/processes' render={() => {
+                    return (auth.user) ? <i18nProcesses/> : <Redirect to='/auth'/>;
+                }}/>
+                <Route path='/reference' render={() => {
+                    return (auth.user) ? <Reference/> : <Redirect to='/auth'/>;
+                }}/>
+                <Route path='/stats' render={() => {
+                    return (auth.user) ? <Stats/> : <Redirect to='/auth'/>;
+                }}/>
+                <Route path='/test-tools' render={() => {
+                    return (auth.user) ? <TestTools/> : <Redirect to='/auth'/>;
                 }}/>
                 <Redirect to='/lessons'/>
             </Switch>
