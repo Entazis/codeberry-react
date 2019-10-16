@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Switch, Route, Redirect } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Spinner } from 'react-bootstrap';
@@ -8,22 +8,24 @@ import classes from './App.module.css';
 import Layout from './Layout/Layout';
 import Auth from './Auth/Auth';
 import Lessons from './Lessons/Lessons';
-import Profile from './User/Profile/Profile';
-import Referral from './User/Referral/Referral';
-import Search from './User/Search/Search';
-import Projects from './CurriculumRepository/Projects/Projects';
-import Concepts from './CurriculumRepository/Concepts/Concepts';
-import CurriculumProcesses from './CurriculumRepository/Processes/Processes';
-import i18nProcesses from './i18n/Processes/Processes';
-import Reference from './Reference/Reference';
-import Stats from './Stats/Stat';
-import TestTools from './TestTools/TestTools';
 
 import { useAuth } from "./hooks/useAuth";
 
+const Profile = lazy(() => import('./User/Profile/Profile'));
+const Referral = lazy(() => import('./User/Referral/Referral'));
+const Search = lazy(() => import('./User/Search/Search'));
+const Projects = lazy(() => import('./CurriculumRepository/Projects/Projects'));
+const Concepts = lazy(() => import('./CurriculumRepository/Concepts/Concepts'));
+const CurriculumProcesses = lazy(() => import('./CurriculumRepository/Processes/Processes'));
+const I18nProcesses = lazy(() => import('./i18n/Processes/Processes'));
+const Reference = lazy(() => import('./Reference/Reference'));
+const Stats = lazy(() => import('./Stats/Stats'));
+const TestTools = lazy(() => import('./TestTools/TestTools'));
+
 const App = () => {
     const auth = useAuth();
-    let routes = <Spinner animation="grow" variant="danger"/>;
+    const spinner = <Spinner animation="grow" variant="danger"/>;
+    let routes = spinner;
 
     if (!auth.loading) {
         routes = (
@@ -39,34 +41,64 @@ const App = () => {
                     return (auth.user) ? <Redirect to='/lessons'/> : <Auth/>;
                 }}/>
                 <Route path='/user/profile' render={() => {
-                    return (auth.user) ? <Profile/> : <Redirect to='/auth'/>;
+                    return (auth.user) ?
+                        <Suspense fallback={spinner}>
+                            <Profile/>
+                        </Suspense> : <Redirect to='/auth'/>;
                 }}/>
                 <Route path='/user/referral' render={() => {
-                    return (auth.user) ? <Referral/> : <Redirect to='/auth'/>;
+                    return (auth.user) ?
+                        <Suspense fallback={spinner}>
+                            <Referral/>
+                        </Suspense> : <Redirect to='/auth'/>;
                 }}/>
                 <Route path='/user/search' render={() => {
-                    return (auth.user) ? <Search/> : <Redirect to='/auth'/>;
+                    return (auth.user) ?
+                        <Suspense fallback={spinner}>
+                            <Search/>
+                        </Suspense> : <Redirect to='/auth'/>;
                 }}/>
                 <Route path='/curriculum-repository/projects' render={() => {
-                    return (auth.user) ? <Projects/> : <Redirect to='/auth'/>;
+                    return (auth.user) ?
+                        <Suspense fallback={spinner}>
+                            <Projects/>
+                        </Suspense> : <Redirect to='/auth'/>;
                 }}/>
                 <Route path='/curriculum-repository/concepts' render={() => {
-                    return (auth.user) ? <Concepts/> : <Redirect to='/auth'/>;
+                    return (auth.user) ?
+                        <Suspense fallback={spinner}>
+                            <Concepts/>
+                        </Suspense> : <Redirect to='/auth'/>;
                 }}/>
                 <Route path='/curriculum-repository/processes' render={() => {
-                    return (auth.user) ? <CurriculumProcesses/> : <Redirect to='/auth'/>;
+                    return (auth.user) ?
+                        <Suspense fallback={spinner}>
+                            <CurriculumProcesses/>
+                        </Suspense> : <Redirect to='/auth'/>;
                 }}/>
                 <Route path='/i18n/processes' render={() => {
-                    return (auth.user) ? <i18nProcesses/> : <Redirect to='/auth'/>;
+                    return (auth.user) ?
+                        <Suspense fallback={spinner}>
+                            <I18nProcesses/>
+                        </Suspense> : <Redirect to='/auth'/>;
                 }}/>
                 <Route path='/reference' render={() => {
-                    return (auth.user) ? <Reference/> : <Redirect to='/auth'/>;
+                    return (auth.user) ?
+                        <Suspense fallback={spinner}>
+                            <Reference/>
+                        </Suspense> : <Redirect to='/auth'/>;
                 }}/>
                 <Route path='/stats' render={() => {
-                    return (auth.user) ? <Stats/> : <Redirect to='/auth'/>;
+                    return (auth.user) ?
+                        <Suspense fallback={spinner}>
+                            <Stats/>
+                        </Suspense> : <Redirect to='/auth'/>;
                 }}/>
                 <Route path='/test-tools' render={() => {
-                    return (auth.user) ? <TestTools/> : <Redirect to='/auth'/>;
+                    return (auth.user) ?
+                        <Suspense fallback={spinner}>
+                            <TestTools/>
+                        </Suspense> : <Redirect to='/auth'/>;
                 }}/>
                 <Redirect to='/lessons'/>
             </Switch>

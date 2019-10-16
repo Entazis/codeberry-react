@@ -1,6 +1,7 @@
 import React
     from 'react';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import {Link, NavLink} from 'react-router-dom';
@@ -30,14 +31,30 @@ const Header = () => {
                             <Nav.Link to="/service/slack/invite/en-US">Community</Nav.Link>
                             {auth.userData.isAdmin ? (
                                 <NavDropdown title="Admin menu" id="admin-nav-dropdown">
-                                    <NavDropdown.Item><Link to='/user/search'>Students</Link></NavDropdown.Item>
-                                    <NavDropdown.Item><Link to='/curriculum-repository/projects'>Lessons</Link></NavDropdown.Item>
-                                    <NavDropdown.Item><Link to='/curriculum-repository/concepts'>Concepts</Link></NavDropdown.Item>
-                                    <NavDropdown.Item><Link to='/reference'>Reference</Link></NavDropdown.Item>
-                                    <NavDropdown.Item><Link to='/stats'>Statistics</Link></NavDropdown.Item>
-                                    <NavDropdown.Item><Link to='/curriculum-repository/processes'>Curriculum i18n tools</Link></NavDropdown.Item>
-                                    <NavDropdown.Item><Link to='/i18n/processes'>Framework i18n tools</Link></NavDropdown.Item>
-                                    <NavDropdown.Item><Link to='/test-tools'>Test tools</Link></NavDropdown.Item>
+                                    <LinkContainer to='/user/search'>
+                                        <NavDropdown.Item>Students</NavDropdown.Item>
+                                    </LinkContainer>
+                                    <LinkContainer  to='/curriculum-repository/projects'>
+                                        <NavDropdown.Item>Lessons</NavDropdown.Item>
+                                    </LinkContainer>
+                                    <LinkContainer to='/curriculum-repository/concepts'>
+                                        <NavDropdown.Item>Concepts</NavDropdown.Item>
+                                    </LinkContainer>
+                                    <LinkContainer to='/reference'>
+                                        <NavDropdown.Item>Reference</NavDropdown.Item>
+                                    </LinkContainer>
+                                    <LinkContainer to='/stats'>
+                                        <NavDropdown.Item>Statistics</NavDropdown.Item>
+                                    </LinkContainer>
+                                    <LinkContainer  to='/curriculum-repository/processes'>
+                                        <NavDropdown.Item>Curriculum i18n tools</NavDropdown.Item>
+                                    </LinkContainer>
+                                    <LinkContainer  to='/i18n/processes'>
+                                        <NavDropdown.Item>Framework i18n tools</NavDropdown.Item>
+                                    </LinkContainer>
+                                    <LinkContainer to='/test-tools'>
+                                        <NavDropdown.Item>Test tools</NavDropdown.Item>
+                                    </LinkContainer>
                                 </NavDropdown>
                             ) : null}
                         </Nav>
@@ -56,12 +73,16 @@ const Header = () => {
                                 id="user-nav-dropdown">
                                 <NavDropdown.Item><OnBoardingPanel /></NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item>
-                                    <Link to='/user/profile'><FontAwesomeIcon icon={faUser} /> Profile</Link>
-                                </NavDropdown.Item>
-                                <NavDropdown.Item>
-                                    <Link to='/auth/logout'><FontAwesomeIcon icon={faSignOutAlt} /> Logout</Link>
-                                </NavDropdown.Item>
+                                <LinkContainer to='/user/profile'>
+                                    <NavDropdown.Item>
+                                        <FontAwesomeIcon icon={faUser} /> Profile
+                                    </NavDropdown.Item>
+                                </LinkContainer>
+                                <LinkContainer to='/auth/logout'>
+                                    <NavDropdown.Item>
+                                        <FontAwesomeIcon icon={faSignOutAlt} /> Logout
+                                    </NavDropdown.Item>
+                                </LinkContainer>
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>
