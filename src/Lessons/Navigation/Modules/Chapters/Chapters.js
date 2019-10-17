@@ -8,28 +8,28 @@ const chapters = (props) => {
     const chapterList = props.chapters.map((chapter, index) =>
         {
             return (
-            <div className={classes.Chapter} key={chapter.id}>
-                <Card>
-                    <Accordion.Toggle as={Card.Header} variant="link" eventKey={'c' + index}>
-                        {chapter.title}
-                    </Accordion.Toggle>
-                    <Accordion.Collapse eventKey={'c' + index}>
-                        <Card.Body>
-                            <Lessons lessons={chapter.lessons}/>
-                        </Card.Body>
-                    </Accordion.Collapse>
-                </Card>
-            </div>
+                <div className={classes.Chapter} key={chapter.id}>
+                    <Accordion as={Card} defaultActiveKey="0">
+                        <Accordion.Toggle as={Card.Header} variant="link" eventKey={'c' + index}>
+                            <div className={classes.ChapterHeader}>
+                                {chapter.title}
+                            </div>
+                        </Accordion.Toggle>
+                        <Accordion.Collapse as={Card.Body} eventKey={'c' + index}>
+                            <div className={classes.ChapterBody}>
+                                <Lessons lessons={chapter.lessons}/>
+                            </div>
+                        </Accordion.Collapse>
+                    </Accordion>
+                </div>
             );
         }
     );
 
     return (
-        <div className={classes.Chapters}>
-            <Accordion defaultActiveKey="0">
-                {chapterList}
-            </Accordion>
-        </div>
+        <React.Fragment>
+            {chapterList}
+        </React.Fragment>
     );
 };
 

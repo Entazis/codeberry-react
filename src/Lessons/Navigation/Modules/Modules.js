@@ -9,11 +9,16 @@ import {faCheckCircle} from '@fortawesome/free-solid-svg-icons';
 const modules = (props) => {
     const moduleList = props.modules.map((module, index) =>
         {
+            const headerClasses = [classes.ModuleHeader];
+            if (module.progress === '100%') {
+                headerClasses.push(classes.Finished);
+            }
+
             return (
-                <div className={classes.Module}>
+                <div className={classes.Module} key={index}>
                     <Accordion as={Card} defaultActiveKey="0">
                         <Accordion.Toggle as={Card.Header} variant="link" eventKey={'m' + index}>
-                            <div className={classes.ModuleHeader}>
+                            <div className={headerClasses.join(' ')}>
                                 <img className={classes.ModuleThumbnail}
                                      src="/logo192.png"
                                      alt="Module thumbnail" />

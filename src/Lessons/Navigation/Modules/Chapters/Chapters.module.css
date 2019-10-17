@@ -1,7 +1,16 @@
-.Chapters {
+.Chapter {
 
 }
 
-.Chapter {
+.ChapterHeader {
+    background-color: #f5f5f5;
+}
+
+.Finished {
+    color: #898993;
+    background-color: #eaf6ea;
+}
+
+.ChapterBody {
 
 }
