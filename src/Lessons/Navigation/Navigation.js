@@ -1,130 +1,17 @@
 import React, {useState} from 'react';
-
-import classes from './Navigation.module.css';
-import {useWindowSize} from '../../hooks/useWindowSize';
-import Modules from './Modules/Modules';
 import {
     Accordion,
     Button,
     Card
 } from 'react-bootstrap';
 
-const Navigation = () => {
-    const [modules] = useState([
-        {
-            id: 'html-basics',
-            title: 'HTML Basics',
-            progress: '23%',
-            chapters: [
-                {
-                    id: 'reminy',
-                    title: 'Introduction',
-                    lessons: [
-                        {
-                            id: '0',
-                            title: 'How to use this project',
-                            finished: true
-                        },
-                        {
-                            id: '1',
-                            title: 'What is HTML?',
-                            finished: true
-                        },
-                        {
-                            id: '2',
-                            title: 'An HTML document',
-                            finished: true
-                        },
-                        {
-                            id: '3',
-                            title: 'An HTML tag',
-                            finished: false
-                        },
-                        {
-                            id: '4',
-                            title: 'Writing HTML',
-                            finished: false
-                        }
-                    ]
-                },
-                {
-                    id: 'zionys',
-                    title: 'Basic tags',
-                    lessons: [
-                        {
-                            id: '0',
-                            title: 'Headings',
-                            finished: false
-                        },
-                        {
-                            id: '1',
-                            title: 'Paragraphs',
-                            finished: false
-                        },
-                        {
-                            id: '2',
-                            title: 'Links',
-                            finished: false
-                        },
-                        {
-                            id: '3',
-                            title: 'Images',
-                            finished: false
-                        },
-                        {
-                            id: '4',
-                            title: 'Special meaning',
-                            finished: false
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            id: 'css-basics',
-            title: 'Css Basics',
-            progress: '0%',
-            chapters: [
-                {
-                    id: 'zukova',
-                    title: 'Introduction',
-                    lessons: [
-                        {
-                            id: '0',
-                            title: 'How to use this project',
-                            finished: false
-                        },
-                        {
-                            id: '1',
-                            title: 'What is CSS?',
-                            finished: false
-                        },
-                        {
-                            id: '2',
-                            title: 'Where to write CSS?',
-                            finished: false
-                        },
-                        {
-                            id: '3',
-                            title: 'A CSS expression',
-                            finished: false
-                        },
-                        {
-                            id: '4',
-                            title: 'Selectors',
-                            finished: false
-                        },
-                        {
-                            id: '5',
-                            title: 'Validation',
-                            finished: false
-                        }
-                    ]
-                }
-            ]
-        }
-        ]);
+import {lessons} from './lessons';
+import classes from './Navigation.module.css';
+import {useWindowSize} from '../../hooks/useWindowSize';
+import Modules from './Modules/Modules';
 
+const Navigation = () => {
+    const [modules] = useState(lessons);
     const [selected] = useState({
         moduleId: 'html-basics',
         chapterId: 'reminy',
@@ -160,9 +47,7 @@ const Navigation = () => {
                     </Card.Header>
                     <Accordion.Collapse eventKey="h1">
                         <Card.Body>
-                            <Accordion defaultActiveKey="0">
-                                <Modules modules={modules}/>
-                            </Accordion>
+                            <Modules modules={modules}/>
                         </Card.Body>
                     </Accordion.Collapse>
                 </Card>

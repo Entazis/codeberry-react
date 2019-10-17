@@ -17,9 +17,7 @@ const modules = (props) => {
                     </Card.Header>
                     <Accordion.Collapse eventKey={'m' + index}>
                         <Card.Body>
-                            <Accordion defaultActiveKey="0">
-                                <Chapters chapters={module.chapters}/>
-                            </Accordion>
+                            <Chapters chapters={module.chapters}/>
                         </Card.Body>
                     </Accordion.Collapse>
                 </Card>
@@ -30,7 +28,9 @@ const modules = (props) => {
 
     return (
         <div className={classes.Modules}>
-            {moduleList}
+            <Accordion defaultActiveKey="0">
+                {moduleList}
+            </Accordion>
         </div>
     );
 };

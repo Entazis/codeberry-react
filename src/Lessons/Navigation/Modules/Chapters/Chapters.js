@@ -28,7 +28,9 @@ const chapters = (props) => {
 
     return (
         <div className={classes.Chapters}>
-            {chapterList}
+            <Accordion defaultActiveKey="0">
+                {chapterList}
+            </Accordion>
         </div>
     );
 };
