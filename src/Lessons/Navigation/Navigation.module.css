@@ -17,6 +17,33 @@
     left: auto;
     z-index: 999;
     max-width: 100%;
+
+    position: fixed;
+    display: block;
+}
+
+.ControllerOpen {
+    height: 80%;
+}
+
+.ControllerHeader {
+    height: 80px;
+    padding: 5px;
+    background-color: white;
+    border: 1px solid #e1e8ed;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    position: relative;
+}
+
+.ControllerBody {
+    padding: 20px;
+    margin-bottom: 20px;
+    height: 90%;
+    background-color: white;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .Titles {
