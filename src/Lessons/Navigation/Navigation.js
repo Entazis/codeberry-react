@@ -24,9 +24,8 @@ const Navigation = () => {
     const windowSize = useWindowSize();
 
     const controllerClasses = [classes.Controller];
-    const thumbnailClasses = [classes.Thumbnail];
-    if (windowSize.width < 1360) {
-        controllerClasses.push(classes.ControllerBottom);
+    if (windowSize.width >= 1360) {
+        controllerClasses.push(classes.ControllerDesktop);
     }
 
     return (
@@ -38,12 +37,11 @@ const Navigation = () => {
                             <h1 className={classes.ModuleTitle} title={selectedModule.title}>{selectedModule.title} <small className="text-muted">({selectedModule.progress})</small></h1>
                             <p className={classes.chapterTitle}>{selectedChapter.title}</p>
                         </div>
-                        <div className={thumbnailClasses.join(' ')}>
-                            <img src="/logo192.png" alt="Project thumbnail" className={classes.ThumbnailImg} />
-                        </div>
+                        {/*<div className="">*/}
+                        {/*    <img src="/logo192.png" alt="Project thumbnail" className={classes.ThumbnailImg} />*/}
+                        {/*</div>*/}
                     </div>
                 </Accordion.Toggle>
-
                 <Accordion.Collapse as={Card.Body} eventKey="1">
                     <div className={classes.ControllerBody}>
                         <Modules modules={modules}/>
