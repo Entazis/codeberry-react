@@ -1,7 +1,53 @@
-.Modules {
-
+.Module {
+    margin-top: 5px;
+    border: 0;
+    margin-bottom: 0;
 }
 
-.Module {
+.ModuleHeader {
+    cursor: pointer;
+    color: #47474d;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    padding: 12px 40px 12px 25px;
+    position: relative;
+}
+
+.Finished {
+    color: #898993;
+    background-color: #eaf6ea;
+}
+
+.ModuleThumbnail {
+    width: 60px;
+    border-radius: 6px;
+}
+
+.ModuleTitle {
+    margin-left: 10px;
+    margin-right: auto;
+    font-size: 14.4px;
+}
+
+.ProgressRight {
+    top: 50%;
+    position: absolute;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #c74f78;
+}
+
+.ProgressDoneRight {
+    top: 50%;
+    position: absolute;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #3c763d;;
+}
+
+.ModuleBody {
 
 }
