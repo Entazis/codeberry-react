@@ -55,7 +55,12 @@
 }
 
 .ControllerBody {
-
+    padding: 20px;
+    margin-bottom: 20px;
+    height: 90%;
+    background-color: white;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .Titles {
