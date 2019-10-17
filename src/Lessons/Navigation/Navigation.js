@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {
     Accordion,
-    Button,
     Card
 } from 'react-bootstrap';
 
@@ -32,10 +31,10 @@ const Navigation = () => {
 
     return (
         <div className={controllerClasses.join(' ')}>
-            <Accordion defaultActiveKey="0">
+            <Accordion defaultActiveKey='0'>
                 <Card>
-                    <Card.Header>
-                        <Accordion.Toggle as={Button} variant="link" eventKey="h1">
+                    <div className={classes.ControllerHeader}>
+                        <Accordion.Toggle as={Card.Header} variant="link" eventKey="1">
                             <div className={classes.Titles}>
                                 <h1 className={classes.ModuleTitle} title={selectedModule.title}>{selectedModule.title} <small className="text-muted">({selectedModule.progress})</small></h1>
                                 <p className={classes.chapterTitle}>{selectedChapter.title}</p>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import classes from './Modules.module.css';
-import {Accordion, Button, Card} from 'react-bootstrap';
+import {Accordion, Card} from 'react-bootstrap';
 import Chapters from './Chapters/Chapters';
 
 const modules = (props) => {
@@ -10,11 +10,9 @@ const modules = (props) => {
             return (
             <div className={classes.Module} key={module.id}>
                 <Card>
-                    <Card.Header>
-                        <Accordion.Toggle as={Button} variant="link" eventKey={'m' + index}>
-                            {module.title}
-                        </Accordion.Toggle>
-                    </Card.Header>
+                    <Accordion.Toggle as={Card.Header} variant="link" eventKey={'m' + index}>
+                        {module.title}
+                    </Accordion.Toggle>
                     <Accordion.Collapse eventKey={'m' + index}>
                         <Card.Body>
                             <Chapters chapters={module.chapters}/>
