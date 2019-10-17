@@ -24,22 +24,26 @@ const Navigation = () => {
     const windowSize = useWindowSize();
 
     const controllerClasses = [classes.Controller];
+    const controllerHeaderClasses =[classes.ControllerHeader];
+    const thumbnailClasses = [classes.Thumbnail];
     if (windowSize.width >= 1360) {
         controllerClasses.push(classes.ControllerDesktop);
+        controllerHeaderClasses.push(classes.ControllerHeaderDesktop);
+        thumbnailClasses.push(classes.ThumbnailDesktop);
     }
 
     return (
         <div className={controllerClasses.join(' ')}>
             <Accordion as={Card} defaultActiveKey='0'>
                 <Accordion.Toggle as={Card.Header} variant="link" eventKey="1">
-                    <div className={classes.ControllerHeader}>
+                    <div className={controllerHeaderClasses.join(' ')}>
+                        <div className={thumbnailClasses.join(' ')}>
+                            <img src="/logo192.png" alt="Project thumbnail" className={classes.ThumbnailImg} />
+                        </div>
                         <div className={classes.Titles}>
                             <h1 className={classes.ModuleTitle} title={selectedModule.title}>{selectedModule.title} <small className="text-muted">({selectedModule.progress})</small></h1>
                             <p className={classes.chapterTitle}>{selectedChapter.title}</p>
                         </div>
-                        {/*<div className="">*/}
-                        {/*    <img src="/logo192.png" alt="Project thumbnail" className={classes.ThumbnailImg} />*/}
-                        {/*</div>*/}
                     </div>
                 </Accordion.Toggle>
                 <Accordion.Collapse as={Card.Body} eventKey="1">

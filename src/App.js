@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Spinner } from 'react-bootstrap';
 
-import './customStyle.css';
+import './globalStyle.css';
 import classes from './App.module.css';
 import Layout from './Layout/Layout';
 import Auth from './Auth/Auth';

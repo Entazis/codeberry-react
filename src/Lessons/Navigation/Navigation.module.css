@@ -12,7 +12,46 @@
 }
 
 .ControllerHeader {
+    height: 80px;
+    padding: 5px;
+    background-color: white;
+    border: 1px solid #e1e8ed;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    position: relative;
+}
 
+.ControllerHeader:after {
+    font-size: 30px;
+    content: "\219F";
+    position: absolute;
+    top: 50%;
+    right: 1%;
+    transform: translateY(-50%) translateX(-50%);
+    transition: all 300ms ease-in-out;
+}
+
+.ControllerHeader:hover:after {
+    top: 45%;
+    color: #c74f78;
+}
+
+.ControllerHeaderDesktop {
+    border-radius: 4px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    height: 165px;
+    padding: 10px;
+}
+
+.ControllerHeaderDesktop:after {
+    top: 73%;
+    content: "\21a1";
+}
+
+.ControllerHeaderDesktop:hover:after {
+    top: 75%;
 }
 
 .ControllerBody {
@@ -20,21 +59,40 @@
 }
 
 .Titles {
-
+    margin-left: 5px;
+    margin-right: auto;
+    flex-direction: column;
 }
 
 .ModuleTitle {
-
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 280px;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
 }
 
 .chapterTitle {
-
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 .Thumbnail {
+    height: 70px;
+    width: 70px;
+    border-radius: 4px;
+    position: relative;
+}
 
+.ThumbnailDesktop {
+    order: 2;
+    flex-basis: 70px;
 }
 
 .ThumbnailImg {
-
+    max-height: 100%;
+    border-radius: 4px;
 }
