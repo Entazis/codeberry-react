@@ -14,13 +14,13 @@ import { useAuth } from "./hooks/useAuth";
 const Profile = lazy(() => import('./User/Profile/Profile'));
 const Referral = lazy(() => import('./User/Referral/Referral'));
 const Search = lazy(() => import('./User/Search/Search'));
-const Projects = lazy(() => import('./CurriculumRepository/Projects/Projects'));
-const Concepts = lazy(() => import('./CurriculumRepository/Concepts/Concepts'));
-const CurriculumProcesses = lazy(() => import('./CurriculumRepository/Processes/Processes'));
-const I18nProcesses = lazy(() => import('./i18n/Processes/Processes'));
-const Reference = lazy(() => import('./Reference/Reference'));
-const Stats = lazy(() => import('./Stats/Stats'));
-const TestTools = lazy(() => import('./TestTools/TestTools'));
+const Projects = lazy(() => import('./Admin/CurriculumRepository/Projects/Projects'));
+const Concepts = lazy(() => import('./Admin/CurriculumRepository/Concepts/Concepts'));
+const CurriculumProcesses = lazy(() => import('./Admin/CurriculumRepository/Processes/Processes'));
+const I18nProcesses = lazy(() => import('./Admin/i18n/Processes/Processes'));
+const Reference = lazy(() => import('./Admin/Reference/Reference'));
+const Stats = lazy(() => import('./Admin/Stats/Stats'));
+const TestTools = lazy(() => import('./Admin/TestTools/TestTools'));
 
 const App = () => {
     const auth = useAuth();
