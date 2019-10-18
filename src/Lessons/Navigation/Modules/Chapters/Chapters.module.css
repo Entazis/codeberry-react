@@ -4,6 +4,33 @@
 
 .ChapterHeader {
     background-color: #f5f5f5;
+    border-color: #ddd;
+    padding: 12px 40px 12px 25px;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.ChapterTitle {
+    color: #333;
+}
+
+.ProgressRight {
+    top: 50%;
+    position: absolute;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #c74f78;
+}
+
+.ProgressDoneRight {
+    top: 50%;
+    position: absolute;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #3c763d;;
 }
 
 .Finished {
