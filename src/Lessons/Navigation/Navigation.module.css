@@ -3,6 +3,7 @@
     bottom: 0;
     width: 100%;
     z-index: 999;
+    max-height: 700px;
 }
 
 .ControllerDesktop {
@@ -55,9 +56,9 @@
 }
 
 .ControllerBody {
-    padding: 20px;
+    padding: 10px;
     margin-bottom: 20px;
-    height: 90%;
+    max-height: 600px;
     background-color: white;
     overflow-y: scroll;
     overflow-x: hidden;
