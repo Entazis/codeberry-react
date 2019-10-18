@@ -16,8 +16,10 @@ const chapters = (props) => {
             }
 
             const headerClasses = [classes.ChapterHeader];
+            const titleClasses = [classes.ChapterTitle];
             if (completedLessons === numberOfLessons) {
                 headerClasses.push(classes.Finished);
+                titleClasses.push(classes.ChapterTitleFinished)
             }
 
             return (
@@ -25,7 +27,7 @@ const chapters = (props) => {
                     <Accordion as={Card} defaultActiveKey="0">
                         <Accordion.Toggle as={Card.Header} variant="link" eventKey={'c' + index}>
                             <div className={headerClasses.join(' ')}>
-                                <span className={classes.ChapterTitle}>{chapter.title}</span>
+                                <span className={titleClasses.join(' ')}>{chapter.title}</span>
                                 {completedLessons === numberOfLessons ? (
                                     <FontAwesomeIcon icon={faCheckCircle} className={classes.ProgressDoneRight} />
                                 ) : (

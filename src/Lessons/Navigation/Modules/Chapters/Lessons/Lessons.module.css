@@ -1,7 +1,25 @@
-.Lessons {
-
+.Lesson {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid #ddd;
 }
 
-.Lesson {
+.Finished {
+    background-color: #eaf6ea;
+}
 
+.LessonTitle {
+    color: #555;
+}
+
+.LessonTitleFinished {
+    color: #898993;
+}
+
+.FinishedIcon {
+    color: #3c763d;
 }

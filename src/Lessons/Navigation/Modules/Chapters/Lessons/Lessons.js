@@ -1,26 +1,36 @@
 import React from 'react';
 
 import classes from './Lessons.module.css';
-import {Card} from 'react-bootstrap';
 import {NavLink} from 'react-router-dom';
+import {faCheckCircle} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 const lessons = (props) => {
     const lessonList = props.lessons.map((lesson) =>
-        (
-            <div className={classes.Lesson} key={lesson.id}>
-                <Card>
+        {
+            const lessonClasses = [classes.Lesson];
+            const lessonTitleClasses = [classes.LessonTitle];
+            if (lesson.finished) {
+                lessonClasses.push(classes.Finished);
+                lessonTitleClasses.push(classes.LessonTitleFinished)
+            }
+
+            return (
+                <div className={lessonClasses.join(' ')} key={lesson.id}>
                     <NavLink to='/lessons'>
-                        {lesson.title}
+                        {lesson.finished ?
+                            <FontAwesomeIcon icon={faCheckCircle} className={classes.FinishedIcon} /> : null}
+                        <span className={lessonTitleClasses.join(' ')}> {lesson.title}</span>
                     </NavLink>
-                </Card>
-            </div>
-        )
+                </div>
+            )
+        }
     );
 
     return (
-        <div className={classes.Lessons}>
+        <React.Fragment>
             {lessonList}
-        </div>
+        </React.Fragment>
     );
 };
 

@@ -11,6 +11,7 @@
     position: relative;
     text-decoration: none;
     font-size: 14px;
+    cursor: pointer;
 }
 
 .ChapterTitle {
@@ -30,12 +31,16 @@
     position: absolute;
     right: 10px;
     transform: translateY(-50%);
-    color: #3c763d;;
+    color: #3c763d;
 }
 
 .Finished {
-    color: #898993;
     background-color: #eaf6ea;
+}
+
+.ChapterTitleFinished {
+
+    color: #898993;
 }
 
 .ChapterBody {
