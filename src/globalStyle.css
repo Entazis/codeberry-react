@@ -1,5 +1,6 @@
 .navbar {
     height: 60px;
+    flex-wrap: inherit;
 }
 
 .navbar-light .navbar-toggler {
