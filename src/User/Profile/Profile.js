@@ -9,10 +9,18 @@ import SubscriptionDetails from './SubscriptionDetails/SubscriptionDetails';
 import PersonalData from './PersonalData/PersonalData';
 import Badges from './Badges/Badges';
 import FinishedLessons from './FinishedLessons/FinishedLessons';
+import {useWindowSize} from '../../hooks/useWindowSize';
 
-const profile = () => {
+const Profile = () => {
+    const windowSize = useWindowSize();
+
+    const profileClasses = [classes.Profile];
+    if (windowSize.width >= 1360) {
+        profileClasses.push(classes.ProfileDesktop);
+    }
+
     return (
-        <Row className={classes.Profile}>
+        <Row className={profileClasses.join(' ')}>
             <Navigation/>
             <Container>
                 <Row>
@@ -43,4 +51,4 @@ const profile = () => {
     );
 };
 
-export default profile;
+export default Profile;

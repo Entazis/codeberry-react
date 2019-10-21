@@ -1,11 +1,14 @@
 .Profile {
     position: relative;
-    left: 150px;
     max-width: 720px;
     margin: 0 auto;
     padding-top: 10px;
     display: block;
     text-align: left;
+}
+
+.ProfileDesktop {
+    left: 150px;
 }
 
 .PageHeader {
