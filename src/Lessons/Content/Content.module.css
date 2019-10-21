@@ -1,11 +1,14 @@
 .Content {
     position: relative;
-    left: 150px;
     max-width: 720px;
     margin: 0 auto;
     padding-top: 10px;
     display: block;
     text-align: left;
+}
+
+.ContentDesktop {
+    left: 150px;
 }
 
 .ContentOutOfFocus {

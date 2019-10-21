@@ -4,6 +4,7 @@ import React, {
 
 import classes from './Content.module.css';
 import SubmissionForm from './SubmissionForm/SubmissionForm';
+import {useWindowSize} from '../../hooks/useWindowSize';
 
 const Content = () => {
     const [lessonHTML] = useState(
@@ -15,9 +16,15 @@ const Content = () => {
             <p>If this is your first time here, we strongly advise you to complete the accompanying microassignments in every article.</p>
         </React.Fragment>
     );
+    const windowSize = useWindowSize();
+
+    const contentClasses = [classes.Content];
+    if (windowSize.width >= 1360) {
+        contentClasses.push(classes.ContentDesktop);
+    }
 
     return (
-        <div className={classes.Content}>
+        <div className={contentClasses.join(' ')}>
             {lessonHTML}
             <SubmissionForm/>
         </div>
