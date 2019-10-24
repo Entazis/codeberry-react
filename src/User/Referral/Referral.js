@@ -160,6 +160,7 @@ const referral = () => {
                                                             <a className="btn btn-google btn-sm btn-block"
                                                                href="mailto:?Subject=I%20learn%20programming&amp;Body=Hi,%20I'm%20learning%20how%20to%20code%20and%20the%20site%20that%20I%20use%20has%20this%20nifty%20promotion.%0A%0AIf%20you%20sign%20up%20using%20my%20link,%20we'll%20both%20get%20a%20discount%20of%20$15.00%20from%20the%20monthly%20subscription%20fee.%0A%0AHere%20is%20my%20link:%0Ahttps://codeberryschool.com/en/ren/?r=cd807-b6585%0A%0AIt'd%20be%20awesome%20if%20you%20could%20check%20it%20out.%0AI%20really%20think%20you%20would%20like%20it.%20I,%20myself%20enjoy%20it%20very%20much."
                                                                target="_blank"
+                                                               rel="noopener noreferrer"
                                                                data-ga-event="Pressed Email button on Referral page">
                                                                 Email
                                                             </a>
@@ -168,6 +169,7 @@ const referral = () => {
                                                             <a className="btn btn-sm btn-block btn-social btn-referral btn-twitter"
                                                                href="https://twitter.com/intent/tweet?url=https://codeberryschool.com/en/ren/?r=cd807-b6585&amp;text=Want%20to%20learn%20programming%20the%20fun%20way?%20This%20site%20uses%20baby%20elephants%20and%20cats%20to%20explain%20coding.%20If%20you%20sign%20up%20with%20this%20link,%20we%E2%80%99ll%20both%20get%20$15.00%20discount%20from%20them:"
                                                                target="_blank"
+                                                               rel="noopener noreferrer"
                                                                data-ga-event="Pressed Twitter button on Referral page">
                                                                 <FontAwesomeIcon icon={faTwitter}/> Twitter
                                                             </a>
