@@ -4,6 +4,8 @@ import classes from './Content.module.css';
 import {useWindowSize} from '../../hooks/useWindowSize';
 
 const Content = (props) => {
+    console.log('Content!');
+
     const windowSize = useWindowSize();
 
     const contentClasses = [classes.Content];

@@ -1,21 +1,22 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
     Accordion,
     Card
 } from 'react-bootstrap';
 
-import {lessons} from './lessons';
+import {modules} from './lessons';
 import classes from './Navigation.module.css';
 import {useWindowSize} from '../../hooks/useWindowSize';
 import Modules from './Modules/Modules';
 
 const Navigation = () => {
-    const [modules] = useState(lessons);
-    const [selected] = useState({
+    console.log('Navigation!');
+
+    const selected = {
         moduleId: 'html-basics',
         chapterId: 'reminy',
         lessonId: '0'
-    });
+    };
 
     const selectedModule = modules.find(module => module.id === selected.moduleId);
     const selectedChapter = selectedModule.chapters.find(chapter => chapter.id === selected.chapterId);
