@@ -7,7 +7,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCheckCircle} from '@fortawesome/free-solid-svg-icons';
 
 const modules = (props) => {
-    const moduleList = props.modules.map((module, index) =>
+    const moduleList = props.projectMap.map((module, index) =>
         {
             const headerClasses = [classes.ModuleHeader];
             if (module.progress === '100%') {
@@ -23,7 +23,7 @@ const modules = (props) => {
                                      src="/logo192.png"
                                      alt="Module thumbnail" />
                                 <span className={classes.ModuleTitle}>{module.title}</span>
-                                {module.progress === '100%' ? (
+                                {module.isFinished ? (
                                     <FontAwesomeIcon icon={faCheckCircle} className={classes.ProgressDoneRight} />
                                 ) : (
                                     <span className={classes.ProgressRight} title="Module status">{module.progress}</span>
@@ -32,7 +32,7 @@ const modules = (props) => {
                         </Accordion.Toggle>
                         <Accordion.Collapse as={Card.Body} eventKey={'m' + index}>
                             <div className={classes.ModuleBody}>
-                                <Chapters chapters={module.chapters}/>
+                                <Chapters chapters={module.lessons}/>
                             </div>
                         </Accordion.Collapse>
                     </Accordion>

@@ -6,7 +6,7 @@ import {faCheckCircle} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 const lessons = (props) => {
-    const lessonList = props.lessons.map((lesson) =>
+    const lessonList = props.lessons.map((lesson, index) =>
         {
             const lessonClasses = [classes.Lesson];
             const lessonTitleClasses = [classes.LessonTitle];
@@ -16,7 +16,7 @@ const lessons = (props) => {
             }
 
             return (
-                <div className={lessonClasses.join(' ')} key={lesson.id}>
+                <div className={lessonClasses.join(' ')} key={index}>
                     <NavLink to='/lessons'>
                         {lesson.finished ?
                             <FontAwesomeIcon icon={faCheckCircle} className={classes.FinishedIcon} /> : null}

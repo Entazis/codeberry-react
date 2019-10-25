@@ -9,8 +9,9 @@ import classes from './Navigation.module.css';
 import {useWindowSize} from '../../hooks/useWindowSize';
 import Modules from './Modules/Modules';
 
-const Navigation = () => {
+const Navigation = (props) => {
     console.log('Navigation!');
+    console.log(props.projectMap);
 
     const selected = {
         moduleId: 'html-basics',
@@ -49,7 +50,7 @@ const Navigation = () => {
                 </Accordion.Toggle>
                 <Accordion.Collapse as={Card.Body} eventKey="1">
                     <div className={classes.ControllerBody}>
-                        <Modules modules={modules}/>
+                        <Modules projectMap={props.projectMap ? props.projectMap : []}/>
                     </div>
                 </Accordion.Collapse>
             </Accordion>
