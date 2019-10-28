@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 import Navigation from './Navigation/Navigation';
 import Content from './Content/Content';
@@ -7,10 +8,16 @@ import useFetchAssignmentDataAndProjectMap from '../hooks/useFetchAssignmentData
 import {Spinner} from 'react-bootstrap';
 
 const Lessons = () => {
+    let redirect = null;
+    if (window.location.pathname.match(/\/spa\/lessons(\/)?$/)) {
+        redirect = <Redirect to='/spa/lessons/welcome-project/quinin/0'/>;
+    }
+
     const { assignmentData, projectMap, isLoading, error } = useFetchAssignmentDataAndProjectMap(window.location.href);
 
     return (
         <React.Fragment>
+            {redirect}
             {error ?
                 <p>Something went wrong, please try again later!</p> : null
             }
