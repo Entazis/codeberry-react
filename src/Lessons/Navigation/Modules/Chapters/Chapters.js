@@ -33,7 +33,10 @@ const chapters = (props) => {
                         </Accordion.Toggle>
                         <Accordion.Collapse as={Card.Body} eventKey={'c' + index}>
                             <div className={classes.ChapterBody}>
-                                <Lessons lessons={chapter.assignments}/>
+                                <Lessons
+                                    lessons={chapter.assignments}
+                                    moduleName={props.moduleName}
+                                    chapterHash={chapter.hash}/>
                             </div>
                         </Accordion.Collapse>
                     </Accordion>
