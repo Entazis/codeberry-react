@@ -30,77 +30,77 @@ const App = () => {
     if (!auth.loading) {
         routes = (
             <Switch>
-                <Route path='/auth/logout' render={() => {
+                <Route path='/spa/auth/logout' render={() => {
                     auth.signOut().then(() => console.log('Successfully signed out!'));
-                    return <Redirect to='/auth'/>;
+                    return <Redirect to='/spa/auth'/>;
                 }}/>
-                <Route path="/lessons" render={() => {
-                    return (auth.user) ? <Lessons/> : <Redirect to='/auth'/>;
+                <Route path="/spa/lessons" render={() => {
+                    return (auth.user) ? <Lessons/> : <Redirect to='/spa/auth'/>;
                 }}/>
-                <Route path='/auth' render={() => {
-                    return (auth.user) ? <Redirect to='/lessons'/> : <Auth/>;
+                <Route path='/spa/auth' render={() => {
+                    return (auth.user) ? <Redirect to='/spa/lessons'/> : <Auth/>;
                 }}/>
-                <Route path='/user/profile' render={() => {
+                <Route path='/spa/user/profile' render={() => {
                     return (auth.user) ?
                         <Suspense fallback={spinner}>
                             <Profile/>
-                        </Suspense> : <Redirect to='/auth'/>;
+                        </Suspense> : <Redirect to='/spa/auth'/>;
                 }}/>
-                <Route path='/user/referral' render={() => {
+                <Route path='/spa/user/referral' render={() => {
                     return (auth.user) ?
                         <Suspense fallback={spinner}>
                             <Referral/>
-                        </Suspense> : <Redirect to='/auth'/>;
+                        </Suspense> : <Redirect to='/spa/auth'/>;
                 }}/>
-                <Route path='/user/search' render={() => {
+                <Route path='/spa/user/search' render={() => {
                     return (auth.user) ?
                         <Suspense fallback={spinner}>
                             <Search/>
-                        </Suspense> : <Redirect to='/auth'/>;
+                        </Suspense> : <Redirect to='/spa/auth'/>;
                 }}/>
-                <Route path='/curriculum-repository/projects' render={() => {
+                <Route path='/spa/curriculum-repository/projects' render={() => {
                     return (auth.user) ?
                         <Suspense fallback={spinner}>
                             <Projects/>
-                        </Suspense> : <Redirect to='/auth'/>;
+                        </Suspense> : <Redirect to='/spa/auth'/>;
                 }}/>
-                <Route path='/curriculum-repository/concepts' render={() => {
+                <Route path='/spa/curriculum-repository/concepts' render={() => {
                     return (auth.user) ?
                         <Suspense fallback={spinner}>
                             <Concepts/>
-                        </Suspense> : <Redirect to='/auth'/>;
+                        </Suspense> : <Redirect to='/spa/auth'/>;
                 }}/>
-                <Route path='/curriculum-repository/processes' render={() => {
+                <Route path='/spa/curriculum-repository/processes' render={() => {
                     return (auth.user) ?
                         <Suspense fallback={spinner}>
                             <CurriculumProcesses/>
-                        </Suspense> : <Redirect to='/auth'/>;
+                        </Suspense> : <Redirect to='/spa/auth'/>;
                 }}/>
-                <Route path='/i18n/processes' render={() => {
+                <Route path='/spa/i18n/processes' render={() => {
                     return (auth.user) ?
                         <Suspense fallback={spinner}>
                             <I18nProcesses/>
-                        </Suspense> : <Redirect to='/auth'/>;
+                        </Suspense> : <Redirect to='/spa/auth'/>;
                 }}/>
-                <Route path='/reference' render={() => {
+                <Route path='/spa/reference' render={() => {
                     return (auth.user) ?
                         <Suspense fallback={spinner}>
                             <Reference/>
-                        </Suspense> : <Redirect to='/auth'/>;
+                        </Suspense> : <Redirect to='/spa/auth'/>;
                 }}/>
-                <Route path='/stats' render={() => {
+                <Route path='/spa/stats' render={() => {
                     return (auth.user) ?
                         <Suspense fallback={spinner}>
                             <Stats/>
-                        </Suspense> : <Redirect to='/auth'/>;
+                        </Suspense> : <Redirect to='/spa/auth'/>;
                 }}/>
-                <Route path='/test-tools' render={() => {
+                <Route path='/spa/test-tools' render={() => {
                     return (auth.user) ?
                         <Suspense fallback={spinner}>
                             <TestTools/>
-                        </Suspense> : <Redirect to='/auth'/>;
+                        </Suspense> : <Redirect to='/spa/auth'/>;
                 }}/>
-                <Redirect to='/lessons'/>
+                <Redirect to='/spa/lessons'/>
             </Switch>
         );
     }

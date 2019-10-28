@@ -1,26 +1,17 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 
 import Navigation from './Navigation/Navigation';
 import Content from './Content/Content';
 import Feedback from './Feedback/Feedback';
-import useFetch from '../hooks/useFetch';
+import useFetchAssignmentDataAndProjectMap from '../hooks/useFetchAssignmentDataAndProjectMap';
 
 const Lessons = () => {
-    const { response, error } = useFetch('http://127.0.0.1:3000' + window.location.pathname, null);
-    const [templateHtml, setTemplateHtml] = useState(null);
-    const [projectMap, setProjectMap] = useState(null);
-
-    useEffect(() => {
-        if (response && !error) {
-            setTemplateHtml(response.assignmentData.templateHtml);
-            setProjectMap(response.projectMap);
-        }
-    }, [response, error]);
+    const { assignmentData, projectMap } = useFetchAssignmentDataAndProjectMap(window.location.href);
 
     return (
         <React.Fragment>
-            <Content templateHtml={templateHtml}/>
-            <Navigation projectMap={projectMap}/>
+            <Content templateHtml={assignmentData ? assignmentData.templateHtml : null}/>
+            <Navigation projectMap={projectMap ? projectMap : null}/>
             <Feedback/>
         </React.Fragment>
     );

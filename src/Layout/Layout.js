@@ -14,7 +14,7 @@ const Layout = (props) => {
             <main className={classes.Main}>
                 {props.children}
             </main>
-            <Footer isLessonsOnMobile={windowSize.width < 1360 && window.location.pathname.startsWith('/lessons')}/>
+            <Footer isLessonsOnMobile={windowSize.width < 1360 && window.location.pathname.startsWith('/spa/lessons')}/>
         </div>
     );
 };

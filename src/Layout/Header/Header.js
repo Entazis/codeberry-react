@@ -18,7 +18,7 @@ const Header = () => {
             <Navbar
                 expand="lg">
                 <Navbar.Brand>
-                    <Link to='/'>
+                    <Link to='/spa'>
                         <img
                             alt="Logo"
                             src="/images/logo/logo-60x60.png" />
@@ -31,28 +31,28 @@ const Header = () => {
                             <Nav.Link to="/service/slack/invite/en-US">Community</Nav.Link>
                             {auth.userData.isAdmin ? (
                                 <NavDropdown title="Admin menu" id="admin-nav-dropdown">
-                                    <LinkContainer to='/user/search'>
+                                    <LinkContainer to='/spa/user/search'>
                                         <NavDropdown.Item>Students</NavDropdown.Item>
                                     </LinkContainer>
-                                    <LinkContainer  to='/curriculum-repository/projects'>
+                                    <LinkContainer  to='/spa/curriculum-repository/projects'>
                                         <NavDropdown.Item>Lessons</NavDropdown.Item>
                                     </LinkContainer>
-                                    <LinkContainer to='/curriculum-repository/concepts'>
+                                    <LinkContainer to='/spa/curriculum-repository/concepts'>
                                         <NavDropdown.Item>Concepts</NavDropdown.Item>
                                     </LinkContainer>
-                                    <LinkContainer to='/reference'>
+                                    <LinkContainer to='/spa/reference'>
                                         <NavDropdown.Item>Reference</NavDropdown.Item>
                                     </LinkContainer>
-                                    <LinkContainer to='/stats'>
+                                    <LinkContainer to='/spa/stats'>
                                         <NavDropdown.Item>Statistics</NavDropdown.Item>
                                     </LinkContainer>
-                                    <LinkContainer  to='/curriculum-repository/processes'>
+                                    <LinkContainer  to='/spa/curriculum-repository/processes'>
                                         <NavDropdown.Item>Curriculum i18n tools</NavDropdown.Item>
                                     </LinkContainer>
-                                    <LinkContainer  to='/i18n/processes'>
+                                    <LinkContainer  to='/spa/i18n/processes'>
                                         <NavDropdown.Item>Framework i18n tools</NavDropdown.Item>
                                     </LinkContainer>
-                                    <LinkContainer to='/test-tools'>
+                                    <LinkContainer to='/spa/test-tools'>
                                         <NavDropdown.Item>Test tools</NavDropdown.Item>
                                     </LinkContainer>
                                 </NavDropdown>
@@ -73,12 +73,12 @@ const Header = () => {
                                 id="user-nav-dropdown">
                                 <NavDropdown.Item><OnBoardingPanel /></NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <LinkContainer to='/user/profile'>
+                                <LinkContainer to='/spa/user/profile'>
                                     <NavDropdown.Item>
                                         <FontAwesomeIcon icon={faUser} /> Profile
                                     </NavDropdown.Item>
                                 </LinkContainer>
-                                <LinkContainer to='/auth/logout'>
+                                <LinkContainer to='/spa/auth/logout'>
                                     <NavDropdown.Item>
                                         <FontAwesomeIcon icon={faSignOutAlt} /> Logout
                                     </NavDropdown.Item>

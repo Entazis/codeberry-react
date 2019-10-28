@@ -10,9 +10,6 @@ import {useWindowSize} from '../../hooks/useWindowSize';
 import Modules from './Modules/Modules';
 
 const Navigation = (props) => {
-    console.log('Navigation!');
-    console.log(props.projectMap);
-
     const selected = {
         moduleId: 'html-basics',
         chapterId: 'reminy',

@@ -17,7 +17,7 @@ const lessons = (props) => {
 
             return (
                 <div className={lessonClasses.join(' ')} key={index}>
-                    <NavLink to='/lessons'>
+                    <NavLink to='/spa/lessons'>
                         {lesson.finished ?
                             <FontAwesomeIcon icon={faCheckCircle} className={classes.FinishedIcon} /> : null}
                         <span className={lessonTitleClasses.join(' ')}> {lesson.title}</span>
