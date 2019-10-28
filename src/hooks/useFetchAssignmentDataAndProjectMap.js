@@ -10,10 +10,13 @@ export default () => {
     const chapter = urlArr[3];
     const lesson = urlArr[4];
 
-    const { response } = useFetch(`http://127.0.0.1:3000/lessons/spa/${module}/${chapter}/${lesson}`);
+    const { response, error, isLoading } = useFetch(`http://127.0.0.1:3000/lessons/spa/${module}/${chapter}/${lesson}`);
 
     return response ? {
         assignmentData: response.assignmentData ? response.assignmentData : null,
-        projectMap: response.projectMap ? response.projectMap : null
-    } : {};
+        projectMap: response.projectMap ? response.projectMap : null,
+    } : {
+        isLoading: isLoading,
+        error: error
+    };
 };
