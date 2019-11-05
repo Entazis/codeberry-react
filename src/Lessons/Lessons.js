@@ -4,9 +4,8 @@ import { Redirect } from 'react-router-dom';
 import Navigation from './Navigation/Navigation';
 import Content from './Content/Content';
 import Feedback from './Feedback/Feedback';
-import useFetch from '../hooks/useFetch';
+import useFetchProjectMap from '../hooks/useFetchProjectMap';
 import {Spinner} from 'react-bootstrap';
-import {getProjects} from '../graphql/queries';
 
 const Lessons = () => {
     let redirect = null;
@@ -14,16 +13,7 @@ const Lessons = () => {
         redirect = <Redirect to='/spa/lessons/welcome-project/quinin/0'/>;
     }
 
-    const { response, error, isLoading } = useFetch('http://localhost:3002/graphql', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            query: getProjects
-        })
-    });
-
+    const { projectMap, isLoading, error } = useFetchProjectMap();
     const assignmentData = null;
 
     return (
@@ -37,7 +27,7 @@ const Lessons = () => {
                 (
                     <React.Fragment>
                         <Content templateHtml={assignmentData ? assignmentData.templateHtml : null}/>
-                        <Navigation projectMap={response ? response.data.projects : null}/>
+                        <Navigation projectMap={projectMap ? projectMap : null}/>
                         <Feedback/>
                     </React.Fragment>
                 )

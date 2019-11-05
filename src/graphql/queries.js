@@ -1,4 +1,4 @@
-export const getProjects = `{
+export const getProjectMap = `{
     projects {
         name
         title
