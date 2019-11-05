@@ -5,6 +5,7 @@ import Navigation from './Navigation/Navigation';
 import Content from './Content/Content';
 import Feedback from './Feedback/Feedback';
 import useFetchProjectMap from '../hooks/useFetchProjectMap';
+import useFetchAssignmentData from '../hooks/useFetchAssignmentData';
 import {Spinner} from 'react-bootstrap';
 
 const Lessons = () => {
@@ -13,16 +14,16 @@ const Lessons = () => {
         redirect = <Redirect to='/spa/lessons/welcome-project/quinin/0'/>;
     }
 
-    const { projectMap, isLoading, error } = useFetchProjectMap();
-    const assignmentData = null;
+    const { projectMap, projectMapIsLoading, projectMapError } = useFetchProjectMap();
+    const { assignmentData, assignmentDataIsLoading, assignmentDataError } = useFetchAssignmentData('lokker', 1);
 
     return (
         <React.Fragment>
             {redirect}
-            {error ?
+            {projectMapError || assignmentDataError ?
                 <p>Something went wrong, please try again later!</p> : null
             }
-            {isLoading ?
+            {projectMapIsLoading || assignmentDataIsLoading ?
                 <Spinner animation="grow" variant="danger"/> :
                 (
                     <React.Fragment>

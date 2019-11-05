@@ -15,7 +15,7 @@ export default () => {
     return response ? {
         projectMap: response.data.projects ? response.data.projects  : null,
     } : {
-        isLoading: isLoading,
-        error: error
+        projectMapIsLoading: isLoading,
+        projectMapError: error
     };
 };

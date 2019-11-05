@@ -1,4 +1,5 @@
-export const getProjectMap = `{
+export const getProjectMap = `
+query {
     projects {
         name
         title
@@ -13,7 +14,8 @@ export const getProjectMap = `{
     }
  }`;
 
-export const getAssignmentData = `{
+export const getAssignmentData = `
+query assignmentData($lessonHash: String!, $assignmentIndex: Int!) {
     templateHtml,
     pageTitle,
     lessonTitle,
