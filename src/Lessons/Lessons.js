@@ -6,7 +6,7 @@ import Content from './Content/Content';
 import Feedback from './Feedback/Feedback';
 import useFetch from '../hooks/useFetch';
 import {Spinner} from 'react-bootstrap';
-import {get_projects} from '../graphql/queries';
+import {getProjects} from '../graphql/queries';
 
 const Lessons = () => {
     let redirect = null;
@@ -20,7 +20,7 @@ const Lessons = () => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            query: get_projects
+            query: getProjects
         })
     });
 

@@ -1,4 +1,4 @@
-export const get_projects = `{
+export const getProjects = `{
     projects {
         name
         title
@@ -12,3 +12,15 @@ export const get_projects = `{
         }
     }
  }`;
+
+export const getAssignmentData = `{
+    templateHtml,
+    pageTitle,
+    lessonTitle,
+    submissionId,
+    assignmentIndex,
+    assignmentTitle,
+    assignmentName,
+    problemText,
+    submissionInputType
+}`;
