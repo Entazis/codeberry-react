@@ -47,7 +47,7 @@ const Navigation = (props) => {
                 </Accordion.Toggle>
                 <Accordion.Collapse as={Card.Body} eventKey="1">
                     <div className={classes.ControllerBody}>
-                        <Modules projectMap={props.projectMap ? props.projectMap : []}/>
+                        <Modules modules={props.projectMap ? props.projectMap : []}/>
                     </div>
                 </Accordion.Collapse>
             </Accordion>

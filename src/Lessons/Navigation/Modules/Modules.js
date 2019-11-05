@@ -7,7 +7,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCheckCircle} from '@fortawesome/free-solid-svg-icons';
 
 const modules = (props) => {
-    const moduleList = props.projectMap.map((module, index) =>
+    const moduleList = props.modules.map((module, index) =>
         {
             const headerClasses = [classes.ModuleHeader];
             if (module.progress === '100%') {
