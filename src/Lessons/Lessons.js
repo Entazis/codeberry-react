@@ -15,7 +15,7 @@ const Lessons = () => {
     }
 
     const { projectMap, projectMapIsLoading, projectMapError } = useFetchProjectMap();
-    const { assignmentData, assignmentDataIsLoading, assignmentDataError } = useFetchAssignmentData('lokker', 1);
+    const { assignmentData, assignmentDataIsLoading, assignmentDataError } = useFetchAssignmentData('quinin', 1);
 
     return (
         <React.Fragment>

@@ -26,7 +26,11 @@ const chapters = (props) => {
                                     <FontAwesomeIcon icon={faCheckCircle} className={classes.ProgressDoneRight} />
                                 ) : (
                                     <span className={classes.ProgressRight} title="Module status">
-                                        {chapter.submittedAssignmentCount + ' / ' + chapter.totalAssignmentCount}
+                                        {
+                                            (chapter.submittedAssignmentCount ? chapter.submittedAssignmentCount : '0')
+                                            + ' / ' +
+                                            (chapter.totalAssignmentCount ? chapter.totalAssignmentCount : '0')
+                                        }
                                     </span>
                                 )}
                             </div>

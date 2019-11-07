@@ -26,7 +26,7 @@ const modules = (props) => {
                                 {module.isFinished ? (
                                     <FontAwesomeIcon icon={faCheckCircle} className={classes.ProgressDoneRight} />
                                 ) : (
-                                    <span className={classes.ProgressRight} title="Module status">{module.progress}</span>
+                                    <span className={classes.ProgressRight} title="Module status">{module.progress ? module.progress : '0%'}</span>
                                 )}
                             </div>
                         </Accordion.Toggle>
