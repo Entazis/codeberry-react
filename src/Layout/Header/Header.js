@@ -60,7 +60,7 @@ const Header = () => {
                         </Nav>
                         <Nav className="mr-sm-2">
                             <NavLink
-                                to="/user/referral">
+                                to="/spa/user/referral">
                                 <img
                                     alt="Gift"
                                     className={classes.GiftImg}
