@@ -1,7 +1,7 @@
 import useFetch from './useFetch';
 import {getAssignmentData} from '../graphql/queries';
 
-export default (lessonHash, assignmentIndex) => {
+export default (hash, index) => {
     const { response, error, isLoading } = useFetch('http://localhost:3002/graphql', {
         method: 'POST',
         headers: {
@@ -9,7 +9,7 @@ export default (lessonHash, assignmentIndex) => {
         },
         body: JSON.stringify({
             query: getAssignmentData,
-            variables: { lessonHash, assignmentIndex }
+            variables: { hash, index }
         })
     });
 

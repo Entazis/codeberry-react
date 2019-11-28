@@ -15,14 +15,6 @@ query {
  }`;
 
 export const getAssignmentData = `
-query assignmentData($lessonHash: String!, $assignmentIndex: Int!) {
-    templateHtml,
-    pageTitle,
-    lessonTitle,
-    submissionId,
-    assignmentIndex,
-    assignmentTitle,
-    assignmentName,
-    problemText,
-    submissionInputType
+query assignmentData($hash: String!, $index: Int!) {
+    assignmentData(lessonHash: $hash, $assignmentIndex: $index) {lessonHtml}
 }`;
